@@ -1,4 +1,54 @@
-<?php include('header.php'); ?> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing | System Cares IT Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="navbar.js" defer></script>
+</head>
+
+<body>
+    <header data-nav-root class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl shadow-sm">
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex min-h-16 items-center justify-between py-3 lg:min-h-[5.25rem]">
+                <a href="index.html" class="flex items-center">
+                    <img src="scs logo.png" alt="System Cares IT Solutions" class="h-10 w-auto sm:h-11 lg:h-14">
+                </a>
+
+                <button type="button" data-nav-toggle aria-expanded="false" aria-controls="site-navigation" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-red-200 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/40 lg:hidden">
+                    <span class="sr-only">Toggle navigation</span>
+                    <svg data-nav-icon-open class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                    </svg>
+                    <svg data-nav-icon-close class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 6l12 12"></path>
+                        <path d="M18 6L6 18"></path>
+                    </svg>
+                </button>
+
+                <div id="site-navigation" data-nav-menu class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
+                    <nav class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6">
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#home">Home</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#about">About Us</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#services">Services</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#sales">Sales</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cloud.html">Cloud</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cyber.html">Cyber Security</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="digital-marketing.html">Digital marketing</a>
+                        <a href="#booking-section" class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -86,6 +136,352 @@
         /* Price badge styling */
         .price-badge {
             background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .navbar {
+                background: #ffffff !important;
+                box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+                padding: 10px 0 !important;
+            }
+
+            .logo-img {
+                display: none;
+            }
+
+            .navbar-toggler {
+                min-width: 44px;
+                min-height: 44px;
+                border: 1px solid rgba(0, 0, 0, 0.12);
+            }
+
+            .navbar-collapse {
+                margin-top: 10px;
+                padding: 12px;
+                border-radius: 14px;
+                background: #ffffff;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            }
+
+            .navbar-nav {
+                width: 100%;
+                align-items: stretch !important;
+                gap: 6px;
+            }
+
+            .nav-link {
+                margin: 0;
+                padding: 10px 12px;
+                text-align: center;
+                border-radius: 10px;
+                font-size: 14px !important;
+            }
+
+            .navbar .main-btn {
+                width: 100%;
+                max-width: 280px;
+                margin: 0 auto;
+                min-height: 48px;
+                display: block;
+                font-size: 16px;
+            }
+
+            .hero-gradient {
+                padding-top: 100px !important;
+                padding-bottom: 60px !important;
+                text-align: center;
+            }
+
+            .hero-gradient .max-w-7xl {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .hero-gradient .inline-block.mb-6 {
+                position: static !important;
+                display: inline-block !important;
+                margin-bottom: 12px !important;
+                transform: none !important;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 28px !important;
+                font-weight: 700 !important;
+                line-height: 1.15 !important;
+                margin-bottom: 16px !important;
+            }
+
+            .hero-gradient p {
+                font-size: 15px !important;
+                line-height: 1.6 !important;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap,
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap > div,
+            .grid,
+            .grid > * {
+                width: 100% !important;
+            }
+
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+            }
+
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap > div {
+                text-align: center;
+                font-size: 13px !important;
+                padding: 10px 12px !important;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3,
+            .grid.grid-cols-1.md\:grid-cols-2,
+            .grid.grid-cols-1.md\:grid-cols-4,
+            .grid.grid-cols-1.lg\:grid-cols-2,
+            .grid.grid-cols-1.lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            section,
+            #booking-section {
+                padding: 50px 16px !important;
+            }
+
+            .package-card,
+            .bg-white.rounded-2xl.shadow-lg.p-8.max-w-4xl,
+            .bg-white.rounded-[2.5rem].shadow-2xl.p-10.md\:p-16 {
+                width: 100% !important;
+                margin-bottom: 24px !important;
+                padding: 20px !important;
+                border-radius: 16px !important;
+                transform: none !important;
+                scale: 1 !important;
+            }
+
+            .package-card + .package-card {
+                margin-top: 24px !important;
+            }
+
+            .package-card:hover {
+                transform: translateY(-4px) !important;
+                box-shadow: 0 12px 25px rgba(220, 38, 38, 0.15) !important;
+            }
+
+            .featured-badge,
+            .package-card .absolute.-top-4.left-1\/2.-translate-x-1\/2 {
+                position: static !important;
+                transform: none !important;
+                display: block;
+                margin: 0 auto 12px;
+                text-align: center;
+                animation: none !important;
+            }
+
+            .package-card h3 {
+                font-size: 22px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 8px !important;
+            }
+
+            .package-card p,
+            .package-card li,
+            .package-card span,
+            .text-sm,
+            .text-lg {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+
+            .package-card button,
+            #booking-section button[type='submit'],
+            #booking-section button:not(.navbar-toggler) {
+                display: block;
+                width: 100% !important;
+                max-width: 100%;
+                min-height: 48px;
+                font-size: 16px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 12px 16px !important;
+            }
+
+            #booking-section .grid.grid-cols-1.md\:grid-cols-2.gap-6,
+            #booking-section .grid.grid-cols-1.md\:grid-cols-3.gap-4 {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+
+            #booking-section .text-center.mb-12 {
+                margin-bottom: 24px !important;
+            }
+
+            #booking-section .text-center.mb-12 .inline-block.mb-4 {
+                display: flex !important;
+                justify-content: center !important;
+                margin-bottom: 16px !important;
+                width: 100% !important;
+            }
+
+            #booking-section .text-center.mb-12 .inline-block.mb-4 span {
+                display: inline-flex !important;
+                align-items: center;
+                justify-content: center;
+                max-width: 100%;
+                padding: 10px 14px !important;
+                font-size: 12px !important;
+                line-height: 1.2 !important;
+                white-space: normal !important;
+                text-align: center;
+            }
+
+            #booking-section .text-center.mb-12 h2 {
+                font-size: 26px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 12px !important;
+            }
+
+            #booking-section .text-center.mb-12 p {
+                max-width: 100% !important;
+                font-size: 14px !important;
+                line-height: 1.55 !important;
+                padding: 0 8px !important;
+            }
+
+            #booking-section .space-y-2 label {
+                font-size: 13px !important;
+                line-height: 1.2 !important;
+                gap: 6px !important;
+            }
+
+            #booking-section .space-y-2 label span.whitespace-nowrap {
+                white-space: nowrap !important;
+            }
+
+            #booking-section input,
+            #booking-section select,
+            #booking-section textarea {
+                width: 100% !important;
+                padding: 12px 14px !important;
+                border-radius: 10px !important;
+                font-size: 14px !important;
+            }
+
+            #booking-section .bg-white.rounded-[2.5rem].shadow-2xl.p-10.md\:p-16 {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                padding: 24px 16px !important;
+                border-radius: 20px !important;
+            }
+
+            .inline-block.bg-white.rounded-2xl.shadow-lg.p-8.max-w-4xl {
+                padding: 16px !important;
+            }
+
+            #booking-section .max-w-5xl {
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            .absolute.bottom-0.left-0.right-0 {
+                display: none;
+            }
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Tablet Responsive (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-gradient {
+                padding-top: 120px !important;
+                padding-bottom: 80px !important;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 42px !important;
+            }
+
+            .hero-gradient p {
+                font-size: 17px !important;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 24px !important;
+            }
+
+            section {
+                padding: 60px 20px !important;
+            }
+
+            .package-card {
+                padding: 24px !important;
+            }
+
+            .package-card h3 {
+                font-size: 26px !important;
+            }
+
+            .text-center.mb-12 h2 {
+                font-size: 36px !important;
+            }
+
+            .text-center.mb-12 p {
+                font-size: 16px !important;
+            }
+
+            .navbar {
+                padding: 12px 0 !important;
+            }
+
+            .logo-img {
+                height: 60px;
+                display: block;
+            }
+        }
+
+        /* Large Desktop (1025px+) */
+        @media (min-width: 1025px) {
+            .hero-gradient {
+                padding-top: 140px !important;
+                padding-bottom: 100px !important;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 64px !important;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+
+            .package-card {
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .package-card:hover {
+                transform: translateY(-12px) scale(1.02) !important;
+            }
+
+            section {
+                padding: 80px 20px !important;
+            }
         }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -467,7 +863,7 @@
                     <div class="space-y-2">
                         <label class="text-sm font-bold text-slate-700 ml-1 flex items-center gap-2">
                             <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
-                            Select Your Package *
+                            <span class="whitespace-nowrap">Select Your Package *</span>
                         </label>
                         <div class="relative">
                             <select id="packageSelect" name="package_name" required class="w-full px-5 py-4 rounded-xl border-2 border-slate-200 focus:ring-4 focus:ring-red-500/20 focus:border-red-600 outline-none transition-all bg-white appearance-none cursor-pointer text-slate-700 font-medium">
@@ -654,5 +1050,8 @@
         `;
         document.head.appendChild(style);
     </script>
+
+   
+
 </body>
 </html>

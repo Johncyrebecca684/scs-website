@@ -23,18 +23,13 @@ const sections = document.querySelectorAll("section");
 // =======================================
 
 window.addEventListener("scroll", () => {
-
     if (!navbar) return;
-
     navbar.classList.toggle("scrolled", window.scrollY > 50);
-
 });
 
 
-
-
 // =======================================
-//          ACTIVE NAV LINK (FIXED)
+//          ACTIVE NAV LINK
 // =======================================
 
 window.addEventListener("scroll", () => {
@@ -42,22 +37,18 @@ window.addEventListener("scroll", () => {
     let current = "";
 
     sections.forEach(section => {
-
         const rect = section.getBoundingClientRect();
 
         if (rect.top <= 150 && rect.bottom >= 150) {
             current = section.getAttribute("id");
         }
-
     });
 
     navLinks.forEach(link => {
-
         link.classList.toggle(
             "active-link",
             link.getAttribute("href") === `#${current}`
         );
-
     });
 
 });
@@ -72,7 +63,6 @@ const text = "Digital solutions for digital problems.";
 let index = 0;
 
 function typeEffect() {
-
     if (!typingText) return;
 
     if (index < text.length) {
@@ -83,12 +73,10 @@ function typeEffect() {
 }
 
 window.addEventListener("load", () => {
-
     if (typingText) {
         typingText.textContent = "";
         typeEffect();
     }
-
 });
 
 
@@ -96,9 +84,7 @@ window.addEventListener("load", () => {
 //          SWIPER (REVIEWS)
 // =======================================
 
-const swiperEl = document.querySelector(".reviewSwiper");
-
-if (swiperEl) {
+if (document.querySelector(".reviewSwiper")) {
 
     new Swiper(".reviewSwiper", {
 
@@ -128,7 +114,7 @@ if (swiperEl) {
 
 
 // =======================================
-//          BUTTON RIPPLE EFFECT (FIXED)
+//          BUTTON RIPPLE EFFECT
 // =======================================
 
 const buttons = document.querySelectorAll(".main-btn");
@@ -161,48 +147,19 @@ buttons.forEach(button => {
 
 
 // =======================================
-//          SCROLL TO TOP BUTTON
-// =======================================
-
-const scrollBtn = document.createElement("button");
-
-scrollBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
-scrollBtn.classList.add("scroll-top-btn");
-
-document.body.appendChild(scrollBtn);
-
-window.addEventListener("scroll", () => {
-
-    scrollBtn.classList.toggle("show", window.scrollY > 400);
-
-});
-
-scrollBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-});
-
-
-// =======================================
 //          FLOATING EFFECT
 // =======================================
 
 const floatingCards = document.querySelectorAll(".glass-card, .service-card");
 
 floatingCards.forEach((card, i) => {
-
     card.style.animation = "floatCard 4s ease-in-out infinite";
     card.style.animationDelay = `${i * 0.2}s`;
-
 });
 
 
 // =======================================
-//          PARALLAX HERO (OPTIMIZED)
+//          PARALLAX HERO
 // =======================================
 
 let lastScroll = 0;
@@ -219,16 +176,14 @@ window.addEventListener("scroll", () => {
     hero.style.backgroundPositionY = `${scrollTop * 0.3}px`;
 
     lastScroll = scrollTop;
-
 });
 
 
 // =======================================
-//          PRELOADER (SMOOTH)
+//          PRELOADER (FIXED - IMPORTANT)
 // =======================================
 
 const preloader = document.createElement("div");
-
 preloader.classList.add("preloader");
 
 preloader.innerHTML = `
@@ -242,13 +197,15 @@ document.body.appendChild(preloader);
 
 window.addEventListener("load", () => {
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
+
+        preloader.classList.add("hide-preloader");
 
         setTimeout(() => {
-            preloader.classList.add("hide-preloader");
-        }, 1200);
+            preloader.remove(); // 🔥 FIX: removes ghost layout issue
+        }, 800);
 
-    });
+    }, 1200);
 
 });
 
@@ -262,10 +219,8 @@ glow.classList.add("cursor-glow");
 document.body.appendChild(glow);
 
 document.addEventListener("mousemove", (e) => {
-
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
-
 });
 
 
@@ -280,16 +235,12 @@ navLinks.forEach(link => {
     link.addEventListener("click", () => {
 
         if (navCollapse && navCollapse.classList.contains("show")) {
-
             new bootstrap.Collapse(navCollapse).hide();
-
         }
 
     });
 
 });
-
-
 
 
 // =======================================
@@ -299,11 +250,20 @@ navLinks.forEach(link => {
 const copyright = document.querySelector(".copyright");
 
 if (copyright) {
-
     copyright.innerHTML =
         `© ${new Date().getFullYear()} System Cares IT Solutions. All Rights Reserved.`;
-
 }
+
+
+// =======================================
+//          GLOBAL OVERFLOW FIX
+// =======================================
+
+window.addEventListener("load", () => {
+    document.documentElement.style.overflowX = "hidden";
+    document.body.style.overflowX = "hidden";
+    document.body.scrollLeft = 0;
+});
 
 
 // =======================================
@@ -319,4 +279,3 @@ console.log(
     "%cAn Aspiring Technology Partner",
     "color:black; font-size:14px;"
 );
-
