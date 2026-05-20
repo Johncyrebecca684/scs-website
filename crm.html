@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS & CRM for Laundry | System Cares IT Solutions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="navbar.js" defer></script>
+</head>
+
+<body>
+    <header data-nav-root class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl shadow-sm">
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex min-h-16 items-center justify-between py-3 lg:min-h-[5.25rem]">
+                <a href="index.html" class="flex items-center">
+                    <img src="scs logo.png" alt="System Cares IT Solutions" class="h-10 w-auto sm:h-11 lg:h-14">
+                </a>
+
+                <button type="button" data-nav-toggle aria-expanded="false" aria-controls="site-navigation" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-red-200 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/40 lg:hidden">
+                    <span class="sr-only">Toggle navigation</span>
+                    <svg data-nav-icon-open class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 6h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 18h16"></path>
+                    </svg>
+                    <svg data-nav-icon-close class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 6l12 12"></path>
+                        <path d="M18 6L6 18"></path>
+                    </svg>
+                </button>
+
+                <div id="site-navigation" data-nav-menu class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
+                    <nav class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6">
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#home">Home</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#about">About Us</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#services">Services</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#sales">Sales</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cloud.html">Cloud</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cyber.html">Cyber Security</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="digital-marketing.html">Digital marketing</a>
+                        <a href="#booking-section" class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #ffffff 0%, #ffe5e5 100%);
+        }
+        /* Animated gradient background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        /* Custom hover effect for feature cards */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: white;
+            position: relative;
+        }
+        .feature-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.25);
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(135deg, #dc2626, #ef4444, #dc2626);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        /* Step card styling */
+        .step-card {
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        .step-card:hover {
+            transform: translateY(-8px);
+        }
+        /* Custom scrollbar to match red theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fee;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #dc2626, #991b1b);
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #b91c1c, #7f1d1d);
+        }
+        /* Content card styling */
+        .content-card {
+            background: white;
+            transition: all 0.4s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        /* Service icon animation */
+        .service-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        /* Pattern background */
+        .pattern-bg {
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(220, 38, 38, 0.03) 35px, rgba(220, 38, 38, 0.03) 70px);
+        }
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Step number styling */
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #dc2626, #991b1b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .navbar {
+                background: #ffffff !important;
+                box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+                padding: 10px 0 !important;
+            }
+
+            .hero-gradient {
+                padding-top: 100px !important;
+                padding-bottom: 60px !important;
+                text-align: center;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 28px !important;
+                font-weight: 700 !important;
+                line-height: 1.15 !important;
+                margin-bottom: 16px !important;
+            }
+
+            .hero-gradient p {
+                font-size: 15px !important;
+                line-height: 1.6 !important;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3,
+            .grid.grid-cols-1.md\:grid-cols-2,
+            .grid.grid-cols-1.lg\:grid-cols-2,
+            .grid.grid-cols-1.lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            section,
+            #booking-section {
+                padding: 50px 16px !important;
+            }
+
+            .feature-card {
+                width: 100% !important;
+                margin-bottom: 24px !important;
+                padding: 20px !important;
+                border-radius: 16px !important;
+                transform: none !important;
+                scale: 1 !important;
+            }
+
+            .feature-card:hover {
+                transform: translateY(-4px) !important;
+                box-shadow: 0 12px 25px rgba(220, 38, 38, 0.15) !important;
+            }
+
+            .section-title h2 {
+                font-size: 28px !important;
+            }
+
+            .step-card {
+                width: 100% !important;
+            }
+
+            .main-btn,
+            .outline-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Tablet Responsive (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-gradient {
+                padding-top: 120px !important;
+                padding-bottom: 80px !important;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 42px !important;
+            }
+
+            .hero-gradient p {
+                font-size: 17px !important;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 24px !important;
+            }
+
+            section {
+                padding: 60px 20px !important;
+            }
+
+            .feature-card {
+                padding: 24px !important;
+            }
+
+            .feature-card h3 {
+                font-size: 22px !important;
+            }
+        }
+
+        /* Large Desktop (1025px+) */
+        @media (min-width: 1025px) {
+            .hero-gradient {
+                padding-top: 140px !important;
+                padding-bottom: 100px !important;
+            }
+
+            .hero-gradient h1,
+            .hero-gradient h2 {
+                font-size: 64px !important;
+            }
+
+            .grid.grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+
+            .feature-card {
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .feature-card:hover {
+                transform: translateY(-12px) scale(1.02) !important;
+            }
+
+            section {
+                padding: 80px 20px !important;
+            }
+        }
+    </style>
+
+    <main>
+        <!-- Hero/Banner Section -->
+        <header class="hero-gradient py-24 relative">
+            <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+                <div class="inline-block mb-6">
+                    <span class="px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">
+                        🧺 Smart Laundry Management
+                    </span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                    Smart POS & CRM<br/>
+                    <span class="text-red-100">Built for Laundry Owners</span>
+                </h1>
+                <p class="text-xl text-red-50 max-w-3xl mx-auto leading-relaxed mb-8">
+                    All in one Application to Manage orders, track garments, send WhatsApp updates, and auto-generate bills. Zero Hassle. Smooth Operations.
+                </p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <a href="#booking-section">
+                        <button class="bg-white text-red-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">
+                            Book a Demo
+                        </button>
+                    </a>
+                    <button class="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 120L50 110C100 100 200 80 300 70C400 60 500 60 600 65C700 70 800 80 900 85C1000 90 1100 90 1150 90L1200 90V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z" fill="white"/>
+                </svg>
+            </div>
+        </header>
+
+        <!-- Why Smart Laundry Owners Need CRM -->
+        <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
+            <div class="max-w-7xl mx-auto relative">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
+                        Why Smart Laundry Owners<br/>
+                        <span class="gradient-text">Need CRM?</span>
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                        Streamline your laundry operations with intelligent automation and real-time tracking
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            📲
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Real-Time WhatsApp Updates</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Send automatic WhatsApp messages to your customers at every stage. No manual messaging. No extra cost per message. Your customers stay informed, and you look professional.
+                        </p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            🏷️
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Smart Garment Tagging & Tracking</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Every garment gets a unique tag linked to the customer's order. No confusion, no mix-ups, no unhappy customers.
+                        </p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            🧾
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Automatic Billing & Invoices</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Generate and share professional digital invoices via WhatsApp or print them on-site. Transparent billing. Zero pilferages.
+                        </p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            👥
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Customer CRM — Know Your Customers Better</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Track full order history and spending patterns without any privacy risks. Build lasting customer relationships.
+                        </p>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            📊
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Business Dashboard & Reports</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Get a bird's eye view of your business. Make smarter business decisions with real data - not guesswork.
+                        </p>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card p-10 rounded-3xl shadow-lg">
+                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                            ⚡
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Zero Hassle Operations</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Automated workflows reduce manual work, eliminate errors, and let you focus on growing your laundry business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-24 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
+                        How It <span class="gradient-text">Works</span>
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                        Get Started in 3 Simple Steps
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Onboarding</h3>
+                        <p class="text-slate-600 leading-relaxed text-center">
+                            We set up the application for your laundry business, configure your services, pricing, and WhatsApp integration. We train you and your staff.
+                        </p>
+                        <div class="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
+                            <p class="text-sm text-slate-600 text-center">
+                                <i class="bi bi-check-circle text-red-600 font-bold"></i> Customized Setup
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Start Taking Orders</h3>
+                        <p class="text-slate-600 leading-relaxed text-center">
+                            Start logging customer orders directly in the app. Automated billing, WhatsApp notifications, and garment tracking all in one place.
+                        </p>
+                        <div class="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
+                            <p class="text-sm text-slate-600 text-center">
+                                <i class="bi bi-check-circle text-red-600 font-bold"></i> Instant Automation
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 text-center">Grow with Data</h3>
+                        <p class="text-slate-600 leading-relaxed text-center">
+                            Use your dashboard to understand your business better. We provide ongoing support and regular updates with new features.
+                        </p>
+                        <div class="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
+                            <p class="text-sm text-slate-600 text-center">
+                                <i class="bi bi-check-circle text-red-600 font-bold"></i> Continuous Growth
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
+            <div class="max-w-5xl mx-auto relative">
+                <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-16 md:p-24 text-center text-white overflow-hidden relative">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
+                    <div class="relative z-10">
+                        <div class="inline-block mb-6">
+                            <span class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                                🚀 Transform Your Laundry Business
+                            </span>
+                        </div>
+                        <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                            Ready to Grow Your Laundry Business?
+                        </h2>
+                        <p class="text-xl text-red-50 mb-10 leading-relaxed max-w-3xl mx-auto">
+                            Let SCS help you implement a smart POS & CRM solution that automates your operations, delights your customers, and grows your revenue. Our expert team is ready to get you started.
+                        </p>
+                        <div class="flex justify-center gap-4 flex-wrap">
+                            <a href="#booking-section">
+                                <button class="bg-white text-red-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">
+                                    Book Your Free Demo
+                                </button>
+                            </a>
+                            <button class="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105">
+                                View Pricing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Booking Section -->
+        <section id="booking-section" class="py-24 px-6 bg-white">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="px-6 py-2 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                        Get In Touch
+                    </span>
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
+                        Book Your <span class="gradient-text">Free Demo</span>
+                    </h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                        Fill out the form below and our team will contact you to schedule your personalized demo
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-[2.5rem] shadow-2xl p-10 md:p-16 border border-red-100">
+                    <form class="space-y-6" id="crm-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-slate-900 font-semibold">
+                                    <span class="text-red-600">*</span> Your Name
+                                </label>
+                                <input type="text" name="name" placeholder="Enter your full name" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-slate-900 font-semibold">
+                                    <span class="text-red-600">*</span> Email Address
+                                </label>
+                                <input type="email" name="email" placeholder="your@email.com" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-slate-900 font-semibold">
+                                    <span class="text-red-600">*</span> Phone Number
+                                </label>
+                                <input type="tel" name="phone" placeholder="+91 XXXXXXXXXX" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10" required>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-slate-900 font-semibold">
+                                    Business Name
+                                </label>
+                                <input type="text" name="business" placeholder="Your laundry business name" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-slate-900 font-semibold">
+                                <span class="text-red-600">*</span> Preferred Demo Time
+                            </label>
+                            <input type="datetime-local" name="demo-time" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10" required>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-slate-900 font-semibold">
+                                Message
+                            </label>
+                            <textarea name="message" placeholder="Tell us about your laundry business and what you're looking to achieve..." rows="5" class="w-full px-6 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:outline-none focus:ring-2 focus:ring-red-500/10 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-700 text-white py-4 rounded-full font-bold text-lg hover:from-red-500 hover:to-red-600 transition-all transform hover:scale-105 shadow-lg">
+                            Book Free Demo Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Services Section -->
+        <section class="py-24 px-6 bg-gradient-to-br from-slate-50 to-red-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
+                        Explore Other <span class="gradient-text">Services</span>
+                    </h2>
+                    <p class="text-xl text-slate-600">
+                        Complete IT solutions for your business
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Cloud Services -->
+                    <a href="cloud.html" class="group">
+                        <div class="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-red-100 hover:border-red-500 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform">
+                                ☁️
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Solutions</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Scalable cloud infrastructure for your growing business needs
+                            </p>
+                            <div class="flex items-center text-red-600 font-semibold group-hover:translate-x-2 transition-transform">
+                                Learn More <i class="bi bi-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Cyber Security -->
+                    <a href="cyber.html" class="group">
+                        <div class="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-red-100 hover:border-red-500 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform">
+                                🔒
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Cyber Security</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Advanced protection for your business data and systems
+                            </p>
+                            <div class="flex items-center text-red-600 font-semibold group-hover:translate-x-2 transition-transform">
+                                Learn More <i class="bi bi-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Digital Marketing -->
+                    <a href="digital-marketing.html" class="group">
+                        <div class="bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 border border-red-100 hover:border-red-500 h-full">
+                            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 group-hover:scale-110 transition-transform">
+                                📱
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-4">Digital Marketing</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Grow your online presence and reach more customers
+                            </p>
+                            <div class="flex items-center text-red-600 font-semibold group-hover:translate-x-2 transition-transform">
+                                Learn More <i class="bi bi-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <img src="scs logo.png" alt="System Cares IT Solutions" class="h-16 mx-auto mb-6">
+            <p class="text-slate-400 mb-8">
+                Your trusted technology partner for IT solutions and digital transformation
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap mb-8">
+                <a href="index.html" class="text-slate-400 hover:text-red-500 transition">Home</a>
+                <span class="text-slate-600">•</span>
+                <a href="index.html#about" class="text-slate-400 hover:text-red-500 transition">About</a>
+                <span class="text-slate-600">•</span>
+                <a href="index.html#services" class="text-slate-400 hover:text-red-500 transition">Services</a>
+                <span class="text-slate-600">•</span>
+                <a href="digital-marketing.html#booking-section" class="text-slate-400 hover:text-red-500 transition">Contact</a>
+            </div>
+            <div class="border-t border-slate-800 pt-8">
+                <p class="text-slate-500 text-sm">
+                    © 2024 System Cares IT Solutions. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

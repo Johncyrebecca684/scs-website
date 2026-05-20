@@ -13,36 +13,51 @@
 </head>
 
 <body>
-    <header data-nav-root class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl shadow-sm">
+    <header data-nav-root
+        class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl shadow-sm">
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex min-h-16 items-center justify-between py-3 lg:min-h-[5.25rem]">
                 <a href="index.html" class="flex items-center">
                     <img src="scs logo.png" alt="System Cares IT Solutions" class="h-10 w-auto sm:h-11 lg:h-14">
                 </a>
 
-                <button type="button" data-nav-toggle aria-expanded="false" aria-controls="site-navigation" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-red-200 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/40 lg:hidden">
+                <button type="button" data-nav-toggle aria-expanded="false" aria-controls="site-navigation"
+                    class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-red-200 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/40 lg:hidden">
                     <span class="sr-only">Toggle navigation</span>
-                    <svg data-nav-icon-open class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg data-nav-icon-open class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M4 6h16"></path>
                         <path d="M4 12h16"></path>
                         <path d="M4 18h16"></path>
                     </svg>
-                    <svg data-nav-icon-close class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg data-nav-icon-close class="hidden h-6 w-6" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
                         <path d="M6 6l12 12"></path>
                         <path d="M18 6L6 18"></path>
                     </svg>
                 </button>
 
-                <div id="site-navigation" data-nav-menu class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
+                <div id="site-navigation" data-nav-menu
+                    class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
                     <nav class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6">
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#home">Home</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#about">About Us</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#services">Services</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#sales">Sales</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cloud.html">Cloud</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cyber.html">Cyber Security</a>
-                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="digital-marketing.html">Digital marketing</a>
-                        <a href="#booking-section" class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact Us</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="index.html#home">Home</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="index.html#about">About Us</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="index.html#services">Services</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="index.html#sales">Sales</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-red-600 lg:px-0 lg:py-2"
+                            href="cloud.html">Cloud</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="cyber.html">Cyber Security</a>
+                        <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent"
+                            href="digital-marketing.html">Digital marketing</a>
+                        <a href="#booking-section"
+                            class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact
+                            Us</a>
                     </nav>
                 </div>
             </div>
@@ -55,12 +70,14 @@
             scroll-behavior: smooth;
             background: linear-gradient(135deg, #ffffff 0%, #ffe5e5 100%);
         }
+
         /* Animated gradient background */
         .hero-gradient {
             background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
             position: relative;
             overflow: hidden;
         }
+
         .hero-gradient::before {
             content: '';
             position: absolute;
@@ -68,23 +85,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
             animation: shimmer 3s infinite;
         }
+
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
+
         /* Custom hover effect for package cards */
         .package-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: white;
             position: relative;
         }
+
         .package-card:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.25);
         }
+
         .package-card::before {
             content: '';
             position: absolute;
@@ -99,40 +125,65 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
+
         .package-card:hover::before {
             opacity: 1;
         }
+
         /* Pulse animation for featured badge */
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5); }
-            50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.8); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(220, 38, 38, 0.8);
+            }
         }
+
         .featured-badge {
             animation: pulse-glow 2s infinite;
         }
+
         /* Custom scrollbar to match red theme */
         ::-webkit-scrollbar {
             width: 10px;
         }
+
         ::-webkit-scrollbar-track {
             background: #fee;
         }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, #dc2626, #991b1b);
             border-radius: 5px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(180deg, #b91c1c, #7f1d1d);
         }
+
         /* Checkmark animation */
         .check-icon {
             animation: check-pop 0.3s ease-out;
         }
+
         @keyframes check-pop {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
+
         /* Price badge styling */
         .price-badge {
             background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
@@ -224,9 +275,9 @@
             }
 
             .hero-gradient .flex.justify-center.gap-4.flex-wrap,
-            .hero-gradient .flex.justify-center.gap-4.flex-wrap > div,
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap>div,
             .grid,
-            .grid > * {
+            .grid>* {
                 width: 100% !important;
             }
 
@@ -236,7 +287,7 @@
                 gap: 12px;
             }
 
-            .hero-gradient .flex.justify-center.gap-4.flex-wrap > div {
+            .hero-gradient .flex.justify-center.gap-4.flex-wrap>div {
                 text-align: center;
                 font-size: 13px !important;
                 padding: 10px 12px !important;
@@ -267,7 +318,7 @@
                 scale: 1 !important;
             }
 
-            .package-card + .package-card {
+            .package-card+.package-card {
                 margin-top: 24px !important;
             }
 
@@ -485,415 +536,648 @@
         }
     </style>
 
-        <header class="hero-gradient py-24 relative">
-            <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-                <div class="inline-block mb-6">
-                    <span class="px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">
-                        ☁️ Scalable Cloud Infrastructure
-                    </span>
+    <header class="hero-gradient py-24 relative">
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <div class="inline-block mb-6">
+                <span
+                    class="px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">
+                    ☁️ Scalable Cloud Infrastructure
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                Scale Your Business<br />
+                <span class="text-red-100">With Secure, Reliable Cloud Solutions</span>
+            </h1>
+            <p class="text-xl text-red-50 max-w-3xl mx-auto leading-relaxed mb-8">
+                Whether you are migrating existing systems, building new infrastructure, or enabling a remote workforce
+                - System Cares IT Solutions delivers cloud solutions that are secure, scalable, and aligned with your
+                business goals.
+            </p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="#booking-section">
+                    <button
+                        class="bg-white text-red-600 px-8 py-3 rounded-full font-bold hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">
+                        Schedule a Free Cloud Consultation
+                    </button>
+                </a>
+                <button
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white/10 transition-all transform hover:scale-105">
+                    Explore Our Cloud Services
+                </button>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 120L50 110C100 100 200 80 300 70C400 60 500 60 600 65C700 70 800 80 900 85C1000 90 1100 90 1150 90L1200 90V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z"
+                    fill="white" />
+            </svg>
+        </div>
+    </header>
+
+    <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
+        <div class="max-w-7xl mx-auto relative">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Security First -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        🔐
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Security First</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Every cloud environment we design is built with security at its core. Access controls,
+                        encryption, and compliance are standard, not optional.
+                    </p>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    Cloud<br/>
-                    <span class="text-red-100">Solutions</span>
-                </h1>
-                <p class="text-xl text-red-50 max-w-3xl mx-auto leading-relaxed mb-8">
-                    SCS provides convenient Cloud solutions, giving you on-demand access to shared pools of IT resources. This helps businesses improve efficiency, reduce costs, and rebalance capital and operating expenses.
+
+                <!-- Built to Scale -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        📈
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Built to Scale</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We design infrastructure that grows with your business. Whether you add five users or five
+                        hundred, your cloud environment scales without disruption.
+                    </p>
+                </div>
+
+                <!-- End-to-End Partnership -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        🤝
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">End-to-End Partnership</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        From initial consultation to post-deployment support, we are with you at every stage. One team,
+                        one point of contact, complete accountability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto relative">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
+                    Cloud <span class="gradient-text">Services</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Comprehensive cloud solutions tailored to your business needs
                 </p>
-                <div class="flex justify-center gap-4 flex-wrap">
-                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                        <span class="text-white font-semibold">✓ Cost Effective</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Cloud Migration & Setup -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        ☁️
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                        <span class="text-white font-semibold">✓ Scalable Growth</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Migration & Setup</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Moving to the cloud is a critical decision. We make it seamless.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Infrastructure assessment and migration planning</li>
+                        <li>✓ Phased migration with zero business disruption</li>
+                        <li>✓ Data transfer, validation, and post-migration support</li>
+                        <li>✓ On-premise to cloud and cloud-to-cloud migrations</li>
+                        <li>✓ Full documentation and handover</li>
+                    </ul>
+                </div>
+
+                <!-- Microsoft 365 & Google Workspace -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        📧
                     </div>
-                    <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
-                        <span class="text-white font-semibold">✓ Enterprise Security</span>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Microsoft 365 & Google Workspace Management</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Empower your team with the right productivity platform.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Licensing, setup, and configuration</li>
+                        <li>✓ Email, calendar, and collaboration tools</li>
+                        <li>✓ User management and access control</li>
+                        <li>✓ Security and compliance settings</li>
+                        <li>✓ Ongoing administration and support</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud Backup & Disaster Recovery -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        💾
                     </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Backup & Disaster Recovery</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Your data is your business. We protect it accordingly.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Automated daily backups with version control</li>
+                        <li>✓ Rapid recovery in the event of data loss or system failure</li>
+                        <li>✓ Offsite and redundant storage configurations</li>
+                        <li>✓ Regular backup testing and verification</li>
+                        <li>✓ Recovery time objective (RTO) planning</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud Server Setup & Management -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        🖥️
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Server Setup & Management</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Reliable server infrastructure without the hardware burden.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Virtual server provisioning and configuration</li>
+                        <li>✓ Performance monitoring and optimization</li>
+                        <li>✓ Patch management and regular updates</li>
+                        <li>✓ Scalable resources that grow with your business</li>
+                        <li>✓ 24/7 server health monitoring</li>
+                    </ul>
+                </div>
+
+                <!-- Remote Work Infrastructure -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        🌐
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Remote Work Infrastructure</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Build a connected, productive remote workforce.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Secure VPN setup and management</li>
+                        <li>✓ Virtual desktop infrastructure (VDI)</li>
+                        <li>✓ Cloud-based file sharing and collaboration tools</li>
+                        <li>✓ User device management and access policies</li>
+                        <li>✓ Remote onboarding for new team members</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud Cost Optimization -->
+                <div class="content-card p-10 rounded-3xl shadow-lg">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
+                        📊
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Cost Optimization</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Many businesses overspend on cloud resources they do not use. We audit and optimize.
+                    </p>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li>✓ Cloud spend analysis and reporting</li>
+                        <li>✓ Right-sizing of underutilized resources</li>
+                        <li>✓ Reserved instance planning for cost reduction</li>
+                        <li>✓ Monthly cloud billing reports</li>
+                        <li>✓ Ongoing cost governance</li>
+                    </ul>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-0 right-0">
-                <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 120L50 110C100 100 200 80 300 70C400 60 500 60 600 65C700 70 800 80 900 85C1000 90 1100 90 1150 90L1200 90V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z" fill="white"/>
-                </svg>
-            </div>
-        </header>
+        </div>
+    </section>
 
-        <section class="py-24 px-6 pattern-bg">
-            <div class="max-w-7xl mx-auto relative">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div
+                class="bg-gradient-to-r from-red-600 via-red-600 to-red-700 rounded-3xl p-12 md:p-20 text-white overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
                     <div>
-                        <div class="inline-block mb-4">
-                            <span class="px-4 py-1.5 bg-red-100 text-red-700 rounded-full text-xs font-bold uppercase tracking-wider">
-                                Scalability Made Simple
-                            </span>
-                        </div>
-                        <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
-                            Scale Your Business with <span class="gradient-text">Cloud Solutions</span>
-                        </h2>
-                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
-                            Your business might be small at the moment, but hopefully, it will grow! If you're thinking about scaling up, it's much faster and more cost-effective to do so using the cloud.
-                        </p>
-                        <p class="text-lg text-slate-700 leading-relaxed mb-8">
-                            SCS provides suitable cloud solutions based on what your business needs, and we can also assist you in building your own custom cloud server.
-                        </p>
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100 hover:border-red-300 transition-all">
-                                <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white flex-shrink-0 text-lg">
-                                    ⚡
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Fast Implementation</h4>
-                                    <p class="text-slate-600 text-sm">Scale your infrastructure in days, not months</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100 hover:border-red-300 transition-all">
-                                <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white flex-shrink-0 text-lg">
-                                    💰
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Cost Optimization</h4>
-                                    <p class="text-slate-600 text-sm">Pay only for what you use, reduce capital expenses</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-xl border border-red-100 hover:border-red-300 transition-all">
-                                <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center text-white flex-shrink-0 text-lg">
-                                    🎯
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 mb-1">Custom Solutions</h4>
-                                    <p class="text-slate-600 text-sm">Tailored cloud infrastructure for your unique business needs</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative h-96">
-                        <div class="absolute inset-0 bg-gradient-to-br from-red-500/10 to-red-600/10 rounded-3xl blur-3xl"></div>
-                        <div class="relative bg-gradient-to-br from-red-50 via-white to-red-50 rounded-3xl p-12 border border-red-200 shadow-2xl h-full flex flex-col items-center justify-center float-animation">
-                            <div class="text-7xl mb-6 pulse-icon">☁️</div>
-                            <h3 class="text-3xl font-bold text-slate-900 mb-4 text-center">Enterprise-Grade<br/>Cloud Infrastructure</h3>
-                            <p class="text-slate-700 text-center text-sm">Designed for growth and reliability</p>
-                            <div class="mt-8 pt-8 border-t border-red-200 w-full">
-                                <div class="grid grid-cols-3 gap-4 text-center">
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-600">99.9%</div>
-                                        <p class="text-xs text-slate-600 mt-1">Uptime</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-600">24/7</div>
-                                        <p class="text-xs text-slate-600 mt-1">Support</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-600">∞</div>
-                                        <p class="text-xs text-slate-600 mt-1">Scalability</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
-            <div class="max-w-7xl mx-auto relative">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
-                        The Need for <span class="gradient-text">Cloud Computing</span>
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-                        Why businesses are transforming their operations with cloud solutions in today's digital landscape
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            📊
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Evolving Business Dynamics</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            As businesses grow and evolve, their demands keep changing. Cloud solutions provide the flexibility to adapt to these changing needs.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Adapt & Grow <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            🚀
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Technology Evolution</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            With current technologies evolving and new ones emerging, cloud platforms keep you at the forefront of innovation and digital transformation.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Stay Ahead <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            🌐
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">On-Demand Access</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            The need to access business applications and data from anywhere has gained immense momentum in the modern, distributed workplace.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Access Anywhere <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            💰
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Cloud Accounting</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Leverage cloud accounting solutions that facilitate easy access to financial data and applications from any location, anytime.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Manage Finances <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            ⚡
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Operational Flexibility</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Stay agile and responsive with cloud infrastructure that adapts to your business requirements in real-time without disruption.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Be Agile <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                    <div class="content-card p-10 rounded-3xl shadow-lg">
-                        <div class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center text-white text-4xl service-icon mb-8">
-                            👥
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Remote Work Support</h3>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Enable your team to work efficiently from anywhere with secure, cloud-based applications and data access for seamless collaboration.
-                        </p>
-                        <div class="flex items-center text-red-600 font-semibold text-sm">
-                            Empower Teams <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="bg-gradient-to-r from-red-600 via-red-600 to-red-700 rounded-3xl p-12 md:p-20 text-white overflow-hidden relative">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
-                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                        <div>
-                            <div class="inline-block mb-6">
-                                <span class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
-                                    ⭐ Featured Enterprise Solution
-                                </span>
-                            </div>
-                            <h2 class="text-5xl md:text-6xl font-extrabold mb-8 leading-tight">
-                                Tally On Cloud
-                            </h2>
-                            <p class="text-lg text-red-50 leading-relaxed mb-6">
-                                Tally On Cloud allows users to run their offline Tally software from anywhere, at any time, and from any device with utmost security, stability, privacy, and reliability.
-                            </p>
-                            <p class="text-lg text-red-50 leading-relaxed mb-10">
-                                It is an Enterprise-Class Product that provides an easy, low-maintenance, and economical way of running Tally.ERP 9 with world-class performance.
-                            </p>
-
-                            <div class="space-y-4 mb-12">
-                                <div class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
-                                    <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <div>
-                                        <strong class="block mb-1">Access Anywhere, Anytime</strong>
-                                        <p class="text-red-50 text-sm">Run Tally from any device, any location, any time with seamless connectivity</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
-                                    <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <div>
-                                        <strong class="block mb-1">Enterprise Security & Stability</strong>
-                                        <p class="text-red-50 text-sm">Advanced security protocols, data privacy, and 99.9% uptime guarantee</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
-                                    <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <div>
-                                        <strong class="block mb-1">Low Maintenance & Cost Effective</strong>
-                                        <p class="text-red-50 text-sm">Easy setup with minimal maintenance and economical operational costs</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-4 flex-wrap justify-center lg:justify-start">
-                                <a href="digital-marketing.html#booking-section">
-                                    <button class="bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-lg">
-                                        Get Started Now
-                                    </button>
-                                </a>
-                                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
-                                    Learn More
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="relative">
-                            <div class="absolute -inset-4 bg-gradient-to-br from-red-600/20 to-red-700/20 rounded-3xl blur-2xl"></div>
-                            <div class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 text-center">
-                                <div class="text-8xl mb-8 animate-bounce">📊</div>
-                                <h3 class="text-3xl font-bold text-white mb-3">Enterprise ERP Solution</h3>
-                                <p class="text-red-50 mb-8">Tally.ERP 9 on the Cloud</p>
-                                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-100 mb-1">100%</div>
-                                        <p class="text-xs text-red-50">Cloud Native</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-100 mb-1">Real-time</div>
-                                        <p class="text-xs text-red-50">Sync</p>
-                                    </div>
-                                    <div>
-                                        <div class="text-2xl font-bold text-red-100 mb-1">Auto</div>
-                                        <p class="text-xs text-red-50">Backup</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 pattern-bg">
-            <div class="max-w-7xl mx-auto relative">
-                <div class="text-center mb-20">
-                    <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
-                        Why Choose <span class="gradient-text">SCS Cloud Solutions</span>
-                    </h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                        Industry-leading expertise, proven track record, and comprehensive support for your cloud transformation journey
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                🎯
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Customized Solutions</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Tailored cloud infrastructure designed specifically for your business requirements and growth objectives
-                        </p>
-                    </div>
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                🛡️
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Enterprise Security</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Industry-standard security protocols and compliance certifications to protect your critical business data
-                        </p>
-                    </div>
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                📈
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Unlimited Scalability</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Easily scale your infrastructure up or down based on business demands without any downtime or disruption
-                        </p>
-                    </div>
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                💡
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Expert Support 24/7</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Dedicated cloud specialists available around the clock for implementation, management, and optimization
-                        </p>
-                    </div>
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                💼
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Cost Efficiency</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Significantly reduce capital expenses and optimize operating costs with pay-as-you-go cloud services
-                        </p>
-                    </div>
-                    <div class="feature-card bg-white rounded-3xl p-10 shadow-lg border-2 border-red-100 hover:border-red-600">
-                        <div class="relative">
-                            <div class="absolute -inset-2 bg-gradient-to-r from-red-600/10 to-red-700/10 rounded-2xl -z-0"></div>
-                            <div class="relative w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
-                                🔄
-                            </div>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">99.9% Reliability</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Guaranteed uptime with redundancy and automatic backup systems ensuring continuous business operations
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
-            <div class="max-w-5xl mx-auto relative">
-                <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-16 md:p-24 text-center text-white overflow-hidden relative">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
-                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
-                    <div class="relative z-10">
                         <div class="inline-block mb-6">
-                            <span class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
-                                🚀 Your Cloud Journey Starts Here
+                            <span
+                                class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                                ⭐ Featured Enterprise Solution
                             </span>
                         </div>
-                        <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
-                            Ready to Move to the Cloud?
+                        <h2 class="text-5xl md:text-6xl font-extrabold mb-8 leading-tight">
+                            Tally On Cloud
                         </h2>
-                        <p class="text-xl text-red-50 mb-10 leading-relaxed max-w-3xl mx-auto">
-                            Let SCS help you design and implement a cloud solution that accelerates your business growth, improves operational efficiency, and reduces costs. Our expert team is ready to transform your digital infrastructure.
+                        <p class="text-lg text-red-50 leading-relaxed mb-6">
+                            Tally On Cloud allows users to run their offline Tally software from anywhere, at any time,
+                            and from any device with utmost security, stability, privacy, and reliability.
                         </p>
-                        <div class="flex justify-center gap-4 flex-wrap">
+                        <p class="text-lg text-red-50 leading-relaxed mb-10">
+                            It is an Enterprise-Class Product that provides an easy, low-maintenance, and economical way
+                            of running Tally.ERP 9 with world-class performance.
+                        </p>
+
+                        <div class="space-y-4 mb-12">
+                            <div
+                                class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
+                                <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <strong class="block mb-1">Access Anywhere, Anytime</strong>
+                                    <p class="text-red-50 text-sm">Run Tally from any device, any location, any time
+                                        with seamless connectivity</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
+                                <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <strong class="block mb-1">Enterprise Security & Stability</strong>
+                                    <p class="text-red-50 text-sm">Advanced security protocols, data privacy, and 99.9%
+                                        uptime guarantee</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:bg-white/15 transition-all">
+                                <svg class="w-6 h-6 text-red-200 shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <strong class="block mb-1">Low Maintenance & Cost Effective</strong>
+                                    <p class="text-red-50 text-sm">Easy setup with minimal maintenance and economical
+                                        operational costs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 flex-wrap justify-center lg:justify-start">
                             <a href="digital-marketing.html#booking-section">
-                                <button class="bg-white text-red-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">
-                                    Schedule Consultation
+                                <button
+                                    class="bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-lg">
+                                    Get Started Now
                                 </button>
                             </a>
-                            <button class="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105">
-                                View Documentation
+                            <button
+                                class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all">
+                                Learn More
                             </button>
                         </div>
                     </div>
+
+                    <div class="relative">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-br from-red-600/20 to-red-700/20 rounded-3xl blur-2xl">
+                        </div>
+                        <div
+                            class="relative bg-white/10 backdrop-blur-lg rounded-3xl p-12 border border-white/20 text-center">
+                            <div class="text-8xl mb-8 animate-bounce">📊</div>
+                            <h3 class="text-3xl font-bold text-white mb-3">Enterprise ERP Solution</h3>
+                            <p class="text-red-50 mb-8">Tally.ERP 9 on the Cloud</p>
+                            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
+                                <div>
+                                    <div class="text-2xl font-bold text-red-100 mb-1">100%</div>
+                                    <p class="text-xs text-red-50">Cloud Native</p>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-red-100 mb-1">Real-time</div>
+                                    <p class="text-xs text-red-50">Sync</p>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-red-100 mb-1">Auto</div>
+                                    <p class="text-xs text-red-50">Backup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        
+    <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
+        <div class="max-w-7xl mx-auto relative">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-extrabold text-slate-900 mb-6">
+                    Cloud <span class="gradient-text">Packages</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                    Flexible Plans for Every Stage of Growth
+                </p>
+            </div>
+
+            <!-- Glassmorphism Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6">
+                <!-- Essentials Plan -->
+                <div class="group relative h-full">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative h-full flex flex-col bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 hover:border-red-400/50 transition-all duration-300 hover:shadow-2xl">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="px-3 py-1 bg-red-100/20 backdrop-blur text-red-600 text-xs font-bold rounded-full border border-red-200/30">
+                                STARTER
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Essentials</h3>
+                        <p class="text-slate-600 text-sm mb-6">Perfect for startups and small teams</p>
+
+                        <div class="mb-8 pb-8 border-b border-white/20">
+                            <p class="text-slate-700 text-sm">Starting from</p>
+                            <div class="text-3xl font-bold text-slate-900">Custom</div>
+                            <p class="text-slate-600 text-xs mt-2">Contact for pricing</p>
+                        </div>
+
+                        <div class="space-y-4 mb-8 flex-grow">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Migration:</strong> Basic</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>M365/Workspace:</strong> Setup only</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Backup:</strong> Daily</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Support:</strong> Email</span>
+                            </div>
+                        </div>
+
+                        <a href="#booking-section">
+                            <button
+                                class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+                                Get Started
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Business Plan (Featured) -->
+                <div class="group relative h-full">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative h-full flex flex-col bg-gradient-to-br from-white to-red-50/30 backdrop-blur-xl rounded-3xl p-8 border border-white/60">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="px-3 py-1.5 bg-gradient-to-r from-red-600 to-red-500 text-white text-xs font-bold rounded-full shadow-lg">
+                                ⭐ POPULAR
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Business</h3>
+                        <p class="text-slate-600 text-sm mb-6">Most popular for growing teams</p>
+
+                        <div class="mb-8 pb-8 border-b border-red-200/20">
+                            <p class="text-slate-700 text-sm">Starting from</p>
+                            <div class="text-3xl font-bold text-red-600">Custom</div>
+                            <p class="text-slate-600 text-xs mt-2">Contact for pricing</p>
+                        </div>
+
+                        <div class="space-y-4 mb-8 flex-grow">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Migration:</strong> Full</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>M365/Workspace:</strong> Setup +
+                                    Management</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Backup:</strong> Daily +
+                                    Versioning</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Server Management:</strong> Included</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Support:</strong> Phone + Email</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Monthly Reporting:</strong> Included</span>
+                            </div>
+                        </div>
+
+                        <a href="#booking-section">
+                            <button
+                                class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+                                Start Your Trial
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="group relative h-full">
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-500 rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                    </div>
+                    <div
+                        class="relative h-full flex flex-col bg-white/20 backdrop-blur-xl rounded-3xl p-8 border border-white/30 hover:border-red-400/50 transition-all duration-300 hover:shadow-2xl">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="px-3 py-1 bg-red-100/20 backdrop-blur text-red-600 text-xs font-bold rounded-full border border-red-200/30">
+                                ENTERPRISE
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Enterprise</h3>
+                        <p class="text-slate-600 text-sm mb-6">For large-scale operations</p>
+
+                        <div class="mb-8 pb-8 border-b border-white/20">
+                            <p class="text-slate-700 text-sm">Custom Pricing</p>
+                            <div class="text-3xl font-bold text-slate-900">Dedicated</div>
+                            <p class="text-slate-600 text-xs mt-2">Contact our sales team</p>
+                        </div>
+
+                        <div class="space-y-4 mb-8 flex-grow">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Migration:</strong> Full +
+                                    Multi-site</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>M365/Workspace:</strong> Full
+                                    Administration</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Cloud Backup:</strong> Continuous +
+                                    DR</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Server Management:</strong> Advanced</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Support:</strong> Priority +
+                                    Dedicated</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <span class="text-slate-700 text-sm"><strong>Monthly Reporting:</strong> Included</span>
+                            </div>
+                        </div>
+
+                        <a href="#booking-section">
+                            <button
+                                class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg">
+                                Schedule Consultation
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <p class="text-slate-600 text-center text-lg">
+                    ✨ All plans include a <strong>free infrastructure assessment</strong> and consultation
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
+        <div class="max-w-5xl mx-auto relative">
+            <div
+                class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-16 md:p-24 text-center text-white overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
+                <div class="relative z-10">
+                    <div class="inline-block mb-6">
+                        <span
+                            class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                            🚀 Your Cloud Journey Starts Here
+                        </span>
+                    </div>
+                    <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                        Ready to Move to the Cloud?
+                    </h2>
+                    <p class="text-xl text-red-50 mb-10 leading-relaxed max-w-3xl mx-auto">
+                        Let SCS help you design and implement a cloud solution that accelerates your business growth,
+                        improves operational efficiency, and reduces costs. Our expert team is ready to transform your
+                        digital infrastructure.
+                    </p>
+                    <div class="flex justify-center gap-4 flex-wrap">
+                        <a href="digital-marketing.html#booking-section">
+                            <button
+                                class="bg-white text-red-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-all transform hover:scale-105 shadow-xl">
+                                Schedule Consultation
+                            </button>
+                        </a>
+                        <button
+                            class="border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all transform hover:scale-105">
+                            View Documentation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     </main>
 </body>
