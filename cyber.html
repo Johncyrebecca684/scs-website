@@ -196,6 +196,20 @@
                 font-size: 34px !important;
             }
         }
+
+        @media (max-width: 480px) {
+            .cyber-badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                white-space: nowrap;
+                font-size: 10px !important;
+                padding: 6px 10px !important;
+                max-width: calc(100vw - 32px);
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
     </style>
 
     <!-- HERO -->
@@ -205,7 +219,7 @@
 
             <div class="inline-block mb-6">
                 <span
-                    class="px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">
+                    class="cyber-badge px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">
                     🔐 Advanced Cyber Security for Businesses of All Sizes
                 </span>
             </div>
@@ -445,7 +459,7 @@
                     <div>
 
                         <span
-                            class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                            class="cyber-badge px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
                             📋 Compliance & Data Protection
                         </span>
 

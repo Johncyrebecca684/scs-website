@@ -482,14 +482,22 @@
         </section>
 
         <!-- Call to Action -->
+        <style>
+        @media (max-width:480px){
+          #cta-hero{padding:1rem !important}
+          #cta-hero .inline-block{margin-bottom:8px}
+          #cta-hero .inline-block span{font-size:11px !important;padding:6px 10px !important;white-space:nowrap !important}
+          #cta-hero h2{font-size:32px !important;line-height:1.05 !important;margin-top:6px !important}
+        }
+        </style>
         <section class="py-24 px-6 bg-gradient-to-br from-red-50 via-white to-red-50 pattern-bg">
             <div class="max-w-5xl mx-auto relative">
-                <div class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-16 md:p-24 text-center text-white overflow-hidden relative">
+            <div id="cta-hero" class="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-16 md:p-24 text-center text-white overflow-hidden relative">
                     <div class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl -z-0"></div>
                     <div class="absolute bottom-0 left-0 w-96 h-96 bg-red-800/20 rounded-full blur-3xl -z-0"></div>
                     <div class="relative z-10">
                         <div class="inline-block mb-6">
-                            <span class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                            <span style="white-space:nowrap;" class="px-6 py-2 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider border border-white/30">
                                 🚀 Transform Your Laundry Business
                             </span>
                         </div>
@@ -649,28 +657,6 @@
 
     </main>
 
-    <footer class="bg-slate-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <img src="scs logo.png" alt="System Cares IT Solutions" class="h-16 mx-auto mb-6">
-            <p class="text-slate-400 mb-8">
-                Your trusted technology partner for IT solutions and digital transformation
-            </p>
-            <div class="flex justify-center gap-4 flex-wrap mb-8">
-                <a href="index.html" class="text-slate-400 hover:text-red-500 transition">Home</a>
-                <span class="text-slate-600">•</span>
-                <a href="index.html#about" class="text-slate-400 hover:text-red-500 transition">About</a>
-                <span class="text-slate-600">•</span>
-                <a href="index.html#services" class="text-slate-400 hover:text-red-500 transition">Services</a>
-                <span class="text-slate-600">•</span>
-                <a href="digital-marketing.html#booking-section" class="text-slate-400 hover:text-red-500 transition">Contact</a>
-            </div>
-            <div class="border-t border-slate-800 pt-8">
-                <p class="text-slate-500 text-sm">
-                    © 2024 System Cares IT Solutions. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
