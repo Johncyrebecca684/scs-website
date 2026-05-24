@@ -13,11 +13,11 @@
 </head>
 
 <body>
-    <header data-nav-root class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur-xl shadow-sm">
+    <header data-nav-root class="fixed inset-x-0 top-0 z-50 bg-transparent backdrop-blur-xl">
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex min-h-16 items-center justify-between py-3 lg:min-h-[5.25rem]">
                 <a href="index.html" class="flex items-center">
-                    <img src="scs logo.png" alt="System Cares IT Solutions" class="h-10 w-auto sm:h-11 lg:h-14">
+                    <img src="scs logo.png" alt="System Cares IT Solutions" class="nav-logo-badge h-10 w-auto sm:h-11 lg:h-14">
                 </a>
 
                 <button type="button" data-nav-toggle aria-expanded="false" aria-controls="site-navigation" class="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-red-200 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/40 lg:hidden">
@@ -33,7 +33,7 @@
                     </svg>
                 </button>
 
-                <div id="site-navigation" data-nav-menu class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
+                <div id="site-navigation" data-nav-menu class="absolute left-4 right-4 top-full mt-3 max-h-0 overflow-hidden rounded-3xl border border-slate-200 bg-transparent px-4 py-3 opacity-0 shadow-lg backdrop-blur-xl transition-all duration-300 ease-out pointer-events-none lg:pointer-events-auto lg:static lg:mt-0 lg:flex lg:max-h-none lg:translate-y-0 lg:items-center lg:justify-end lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none">
                     <nav class="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-6">
                         <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#home">Home</a>
                         <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#about">About Us</a>
@@ -308,7 +308,7 @@
 
     <main>
         <!-- Hero/Banner Section -->
-        <header class="hero-gradient py-24 relative">
+        <header id="home" class="hero-gradient py-24 relative" data-nav-theme="dark">
             <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
                 <div class="inline-block mb-6">
                     <span class="px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold border border-white/30">

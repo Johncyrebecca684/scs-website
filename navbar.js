@@ -15,6 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openClasses = ['max-h-[32rem]', 'opacity-100', 'translate-y-0', 'pointer-events-auto'];
   const closedClasses = ['max-h-0', 'opacity-0', '-translate-y-2', 'pointer-events-none'];
+  const applyTheme = (theme) => {
+    root.dataset.navTheme = theme;
+  };
+
+  const resolveTheme = () => {
+    const navHeight = root.getBoundingClientRect().height;
+    const anchorY = Math.min(window.innerHeight * 0.2, navHeight + 48);
+    const probeX = window.innerWidth * 0.5;
+    const element = document.elementFromPoint(probeX, anchorY);
+    const themedSection = element?.closest?.('[data-nav-theme]');
+
+    if (!themedSection) {
+      applyTheme('light');
+      return;
+    }
+
+    applyTheme(themedSection.dataset.navTheme || 'light');
+  };
 
   const setOpenState = (isOpen) => {
     toggleButton.setAttribute('aria-expanded', String(isOpen));
@@ -25,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   setOpenState(false);
+  resolveTheme();
 
   toggleButton.addEventListener('click', () => {
     const isOpen = toggleButton.getAttribute('aria-expanded') === 'true';
@@ -51,5 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth >= 1024) {
       setOpenState(false);
     }
+    resolveTheme();
   });
+
+  window.addEventListener('scroll', () => {
+    resolveTheme();
+  }, { passive: true });
 });

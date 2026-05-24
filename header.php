@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid px-3 px-lg-4">
             <a class="navbar-brand" href="index.html">
-                <img src="../scs logo last.png" class="logo-img">
+                <img src="../scs logo last.png" class="logo-img nav-logo-badge">
             </a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>

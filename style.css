@@ -3,6 +3,7 @@
 ========================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
 
 /* =========================================
             GLOBAL STYLES
@@ -56,7 +57,7 @@ video {
 ========================================= */
 
 .navbar {
-    background: rgb(255, 255, 255);
+    background: transparent;
     backdrop-filter: blur(15px);
     padding: 15px 0;
     transition: 0.4s;
@@ -64,9 +65,27 @@ video {
 }
 
 .navbar.scrolled {
-    background: #ffffff;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    box-shadow: none;
     color: #000;
+}
+
+[data-nav-root] {
+    --nav-link-color: #0f172a;
+    --nav-link-hover-color: #dc2626;
+}
+
+[data-nav-root][data-nav-theme="dark"] {
+    --nav-link-color: #ffffff;
+    --nav-link-hover-color: #fecaca;
+}
+
+[data-nav-root] [data-nav-menu] a:not(.bg-gradient-to-r) {
+    color: var(--nav-link-color) !important;
+}
+
+[data-nav-root] [data-nav-menu] a:not(.bg-gradient-to-r):hover {
+    color: var(--nav-link-hover-color) !important;
 }
 
 .logo-img {
@@ -76,6 +95,22 @@ video {
 
 .logo-img:hover {
     transform: scale(1.05);
+}
+
+.nav-logo-badge {
+    display: block;
+    width: auto;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    object-fit: contain;
+    transition: 0.4s;
+}
+
+.nav-logo-badge:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.96);
 }
 
 .nav-link {
@@ -201,6 +236,25 @@ video {
     line-height: 1.2;
 }
 
+/* Tech-style hero title */
+.hero-title{
+    font-family: 'Orbitron', 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    text-transform: none;
+    display: inline-block;
+    font-size: clamp(28px, 4.2vw, 56px);
+    margin-top: -12px;
+    line-height: 1.08;
+}
+
+@media (max-width: 768px) {
+    .hero-title{
+        font-size: clamp(20px, 6.5vw, 34px);
+        margin-top: 0;
+    }
+}
+
 .hero-tagline {
     color: #ff4d4d;
     font-size: 28px;
@@ -306,6 +360,8 @@ video {
     max-width: 460px;
     margin-left: auto;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(-20px);
+    transition: transform 280ms ease;
 }
 
 .mini-box {
@@ -392,7 +448,7 @@ video {
 
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .section-title h2 {
@@ -425,10 +481,15 @@ video {
 
 .about-section {
     min-height: auto;
-    padding: clamp(40px, 8vw, 120px) 0;
+    padding: clamp(24px, 5vw, 72px) 0;
     background-image: url('border.jpg.jpeg');
     background-size: cover;
     background-position: center;
+}
+
+.about-section .section-title{
+    margin-top: -8px;
+    margin-bottom: 20px;
 }
 
 .about-section .section-title h2 {
@@ -451,6 +512,32 @@ video {
     margin-bottom: 20px;
 }
 
+.who-card {
+    width: 100%;
+    max-width: 300px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.35s ease;
+    box-shadow: inset 0 -3em 3em rgba(255, 0, 0, 0.1),
+                0 0 0 2px #ff0000,
+                0.3em 0.3em 1em rgba(255, 0, 0, 0.3);
+}
+
+.who-card:hover {
+    border-radius: 16px;
+    transform: translateY(-4px);
+}
+
+.who-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
 .about-section .about-content {
     flex: 0 0 100%;
     max-width: 100%;
@@ -462,11 +549,8 @@ video {
 }
 
 .about-section .about-image img {
-    width: 150%;
-    max-width: clamp(280px, 90vw, 380px);
-    border-radius: 30px;
-    transition: 0.5s;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    height: 100%;
 }
 
 @media (min-width: 993px) {
@@ -512,10 +596,29 @@ video {
 
 .about-content p {
     color: #222;
-    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.65;
     margin-top: 0;
-    max-width: 100%;
+    max-width: 50ch;
+}
+
+@media (max-width: 992px) {
+    .about-content p {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    .about-section .about-image img{
+        width:100%;
+        max-width:100%;
+    }
+    .who-card{
+        max-width: 100%;
+    }
+    .about-section .section-title{
+        margin-top:0;
+        margin-bottom:20px;
+    }
 }
 
 .about-points {
@@ -688,9 +791,9 @@ video {
 
 .services-section .services-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 320px));
+    grid-template-columns: repeat(4, minmax(240px, 1fr));
     justify-content: center;
-    gap: 28px;
+    gap: 24px;
     margin-top: 30px;
 }
 
@@ -712,61 +815,75 @@ video {
 }
 
 .service-card {
-    background: linear-gradient(135deg, #ff0000, #000);
-    min-height: 220px;
+    background: #ffffff;
+    min-height: 160px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 14px;
     padding: 24px;
-    border-radius: 25px;
-    text-align: center;
-    transition: 0.5s;
+    border-radius: 18px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: white;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.service-card:hover::before {
-    opacity: 1;
-}
-
-.service-card * {
-    position: relative;
-    z-index: 2;
-}
-
-.service-card i {
-    font-size: 60px;
-    color: #ffffff;
-    margin-bottom: 25px;
-    transition: 0.4s;
+    border: 1px solid rgba(17, 24, 39, 0.08);
+    box-shadow: 0 14px 36px rgba(17, 24, 39, 0.08);
 }
 
 .service-card h4 {
+    margin: 0;
     font-weight: 700;
-    color: white;
+    color: #111111;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.service-card p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 15px;
 }
 
 .service-card:hover {
-    transform: translateY(-15px);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 42px rgba(17, 24, 39, 0.12);
 }
 
 .service-card:hover h4 {
-    color: #000000;
+    color: #111111;
 }
 
-.service-card:hover i {
-    color: #ff0000;
+.services-section .service-card-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.services-section .service-badge {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff0000, #8b0000);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.services-section .service-subtitle {
+    margin-top: 4px;
+    color: #6b7280;
+    font-size: 13px;
+    line-height: 1.35;
+}
+
+.services-section .service-card p + p {
+    margin-top: -2px;
 }
 
 /* =========================================
@@ -792,39 +909,30 @@ video {
 }
 
 .sales-inner {
-    --w: 220px;
-    --h: 300px;
-    --translateZ: 300px;
-    --rotateX: -14deg;
-    --perspective: 1100px;
-    --quantity: 5;
+    /* straight line right-to-left track container */
     position: relative;
-    width: var(--w);
+    width: 100%;
+    /* default card size (can be overridden in media queries) */
+    --w: 500px;
+    --h: 300px;
+    --gap: 10px;
     height: var(--h);
-    transform-style: preserve-3d;
-    transform: perspective(var(--perspective)) rotateX(var(--rotateX));
-    animation: sales-rotating 20s linear infinite;
+    overflow: hidden;
 }
 
-@keyframes sales-rotating {
-    from {
-        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
-    }
-
-    to {
-        transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn);
-    }
-}
-
+/* Cards move in a straight line from right to left. Each card uses --index to stagger its start time. */
 .sales-card {
     position: absolute;
-    inset: 0;
-    border: 2px solid rgba(255, 255, 255, 0.45);
+    top: 50%;
+    left: 0;
+    width: var(--w);
+    height: var(--h);
+    transform: translateY(-50%) translateX(calc(110vw + (var(--index) * var(--gap))));
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
-    transform-style: preserve-3d;
-    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+    animation: move-rtl 18s linear infinite;
+    animation-delay: calc(var(--index) * 3s);
 }
 
 .sales-card::after {
@@ -832,6 +940,15 @@ video {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.28) 100%);
+}
+
+@keyframes move-rtl {
+    0% {
+        transform: translateY(-50%) translateX(calc(110vw + (var(--index) * var(--gap))));
+    }
+    100% {
+        transform: translateY(-50%) translateX(calc(-150vw));
+    }
 }
 
 .sales-img {
@@ -876,7 +993,7 @@ video {
     .sales-inner {
         --w: 190px;
         --h: 265px;
-        --translateZ: 255px;
+        --gap: 140px;
     }
 }
 
@@ -888,8 +1005,70 @@ video {
     .sales-inner {
         --w: 160px;
         --h: 225px;
-        --translateZ: 210px;
+        --gap: 110px;
     }
+}
+
+/* =========================================
+   Sales Card - new design from user
+   Uses .bgblue / .card aesthetic and a right-to-left hover sheen loop
+========================================= */
+
+.sales-card {
+    /* apply the 'card' gradient and colors */
+    background: linear-gradient(135deg, #ff0000, #8b0000);
+    color: #bec4cf;
+    padding: 1.25rem;
+    border-radius: 1.2rem;
+    box-shadow: 0px 1rem 1.5rem -0.9rem #ff0000;
+    border: none;
+    transition: transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms ease;
+    overflow: hidden;
+}
+
+.sales-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+
+/* ensure label sits above the sheen */
+.sales-label {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    z-index: 3;
+}
+
+/* sheen effect that moves from right to left while hovering */
+.sales-card::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 100%;
+    width: 40%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes sheen-rtl {
+    0% { left: 100%; }
+    100% { left: -40%; }
+}
+
+.sales-card:hover::before {
+    opacity: 1;
+    animation: sheen-rtl 1.6s linear infinite;
+}
+
+/* slight image dim so label reads well */
+.sales-card .sales-img {
+    filter: saturate(0.9) contrast(0.95) brightness(0.9);
 }
 
 
@@ -1261,15 +1440,21 @@ img{
 }
 
 .hero-buttons{
-    display:flex;
+    display: block;
     flex-wrap:wrap;
-    gap:15px;
+    gap: 15px;
 }
 
 .glass-card{
     width:100%;
     max-width:450px;
-    margin:auto;
+        transform: none;
+    }
+
+@media (min-width: 993px) {
+    .hero .glass-card {
+        transform: translateY(-28px) !important;
+    }
 }
 
 /* ABOUT */
@@ -1423,6 +1608,7 @@ footer{
         --w:150px;
         --h:210px;
         --translateZ:190px;
+        --gap: 110px;
     }
 
     /* NAVBAR FIX - MOVE ITEMS TO RIGHT */
