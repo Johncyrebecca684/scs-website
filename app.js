@@ -159,6 +159,71 @@ floatingCards.forEach((card, i) => {
 
 
 // =======================================
+//          RATING COUNTER ANIMATION
+// =======================================
+
+let ratingAnimationTriggered = false;
+
+function animateCounter(element, target, duration = 2000) {
+    const targetValue = parseFloat(target);
+    const increment = targetValue / (duration / 16);
+    let currentValue = 0;
+
+    const counter = setInterval(() => {
+        currentValue += increment;
+        
+        if (currentValue >= targetValue) {
+            element.textContent = target;
+            clearInterval(counter);
+        } else {
+            element.textContent = currentValue.toFixed(1);
+        }
+    }, 16);
+}
+
+function animateIntCounter(element, target, duration = 2000) {
+    const targetValue = parseInt(target);
+    const increment = targetValue / (duration / 16);
+    let currentValue = 0;
+
+    const counter = setInterval(() => {
+        currentValue += increment;
+        
+        if (currentValue >= targetValue) {
+            element.textContent = targetValue;
+            clearInterval(counter);
+        } else {
+            element.textContent = Math.floor(currentValue);
+        }
+    }, 16);
+}
+
+window.addEventListener("scroll", () => {
+    if (ratingAnimationTriggered) return;
+
+    const ratingSummary = document.querySelector(".rating-summary");
+    if (!ratingSummary) return;
+
+    const rect = ratingSummary.getBoundingClientRect();
+    
+    // Start animation when element is in view
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+        ratingAnimationTriggered = true;
+        
+        const counterElement = document.querySelector(".counter");
+        const reviewCounterElement = document.querySelector(".review-counter");
+        
+        if (counterElement) {
+            animateCounter(counterElement, "4.9");
+        }
+        if (reviewCounterElement) {
+            animateIntCounter(reviewCounterElement, "526");
+        }
+    }
+});
+
+
+// =======================================
 //          PARALLAX HERO
 // =======================================
 
