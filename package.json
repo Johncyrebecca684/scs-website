@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo \"Building website...\" && echo \"No compilation required. Website contains ready-to-serve static assets.\""
+    "build:css": "tailwindcss -i ./tailwind-input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./tailwind-input.css -o ./tailwind.css --watch",
+    "start": "npx serve .",
+    "serve": "npx serve ."
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
   }
 }

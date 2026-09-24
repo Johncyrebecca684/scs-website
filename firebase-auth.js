@@ -1,8 +1,5 @@
-// =======================================
-//          FIREBASE CONFIG & INITIALIZATION
-// =======================================
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js";
+import { getAnalytics, isSupported } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-analytics.js";
 import { 
   getAuth, 
   RecaptchaVerifier, 
@@ -21,7 +18,12 @@ const firebaseConfig = {
 
 // Initialize Firebase services
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let analytics = null;
+isSupported().then(supported => {
+  if (supported) {
+    analytics = getAnalytics(app);
+  }
+}).catch(() => {});
 const auth = getAuth(app);
 
 // Operational variables

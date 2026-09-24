@@ -1596,12 +1596,6 @@ footer{
     flex-wrap:wrap;
 }
 
-/* JUSTIFY FIX */
-.justify-center{
-    justify-content: flex-end;
-    
-}
-
 /* =========================================
         TABLET
 ========================================= */
