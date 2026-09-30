@@ -184,7 +184,7 @@ video {
     position: relative;
     min-height: 80vh;
     padding: 110px 0 40px;
-    background: url('home bg.jpg.jpeg');
+    background: url('../images/home bg.jpg.jpeg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -487,7 +487,7 @@ video {
     min-height: auto;
     padding: clamp(24px, 5vw, 72px) 0;
     background-color: #ffffff;
-    background-image: url('border.jpg.jpeg');
+    background-image: url('../images/border.jpg.jpeg');
     background-size: cover;
     background-position: center;
 }
@@ -896,7 +896,7 @@ video {
 
 .sales-section {
     padding: 70px 0 90px;
-    background-image: url('sales background.png');
+    background-image: url('../images/sales background.png');
     background-size: cover;
     background-position: center;
 }

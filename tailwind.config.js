@@ -2,8 +2,7 @@
 module.exports = {
   content: [
     "./*.html",
-    "./*.js",
-    "./*.php"
+    "./assets/js/**/*.js"
   ],
   theme: {
     extend: {
@@ -17,3 +16,4 @@ module.exports = {
   },
   plugins: [],
 }
+
