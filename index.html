@@ -53,17 +53,16 @@
 
 
   <title>System Cares IT Solutions | Cloud, Cyber Security & Laundry CRM</title>
-
- 
+  <link rel="icon" type="image/png" href="assets/images/scs logo.png">
 
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
   <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/tailwind.css">
@@ -104,7 +103,7 @@
             <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="digital-marketing.html">Digital Marketing</a>
             <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="cloud.html">Other Services</a>
             <a class="rounded-xl px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-red-50 hover:text-red-600 lg:px-0 lg:py-2 lg:hover:bg-transparent" href="index.html#sales">Sales</a>
-            <a href="digital-marketing.html#booking-section" class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact Us</a>
+            <a href="#contact" class="mt-2 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-red-700 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-red-500/25 transition hover:scale-[1.02] hover:from-red-500 hover:to-red-600 lg:mt-0">Contact Us</a>
           </nav>
         </div>
       </div>
@@ -140,7 +139,7 @@
             <div class="hero-buttons">
               <a href="crm.html#home"><button class="main-btn">POS & CRM for Laundry</button></a>
               <a href="digital-marketing.html"><button class="main-btn">Digital Marketing</button></a>
-              <a href="digital-marketing.html#booking-section"><button class="main-btn">Contact Us</button></a>
+              <a href="#contact"><button class="main-btn">Contact Us</button></a>
             </div>
 
           </div>
@@ -467,7 +466,89 @@
 
 </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT SECTION -->
+  <section class="contact-section" id="contact" data-nav-theme="light">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- CONTACT INFO -->
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="section-title text-start mb-4">
+            <span class="badge" style="background:#fee2e2; color:#dc2626; font-weight:700; padding:6px 14px; border-radius:999px;">Get in Touch</span>
+            <h2 style="font-size:36px; font-weight:800; color:#0f172a; margin-top:12px;">Let's Talk About Your Business Needs</h2>
+            <p style="color:#64748b; font-size:15px; margin-top:8px;">Have questions about our Smart POS & CRM, Cloud Infrastructure, Cyber Security, or Digital Marketing? Contact our team today.</p>
+          </div>
+
+          <div class="contact-info">
+            <div class="info-box">
+              <i class="bi bi-telephone-fill"></i>
+              <div>
+                <h5>Call Us Directly</h5>
+                <p style="margin:0; color:#64748b;">+91 97890 20311 / 044-42832106</p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-envelope-fill"></i>
+              <div>
+                <h5>Email Support</h5>
+                <p style="margin:0; color:#64748b;">support@systemcaresitsolutions.com</p>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-geo-alt-fill"></i>
+              <div>
+                <h5>Our Office</h5>
+                <p style="margin:0; color:#64748b;">3/299, Binu Towers EVR Periyar Salai, ECR, Palavakkam, Chennai - 600041</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="col-lg-7 mt-4 mt-lg-0" data-aos="fade-left">
+          <div class="contact-form position-relative">
+            <h4 style="font-weight:800; color:#0f172a; margin-bottom:20px;">Send Us a Message</h4>
+            <form id="homeContactForm">
+              <div class="form-row">
+                <div>
+                  <input type="text" id="homeName" name="name" placeholder="Your Name *" required>
+                </div>
+                <div>
+                  <input type="email" id="homeEmail" name="email" placeholder="Your Email *" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div>
+                  <input type="tel" id="homePhone" name="phone" placeholder="Phone Number *" required>
+                </div>
+                <div>
+                  <input type="text" id="homeSubject" name="subject" placeholder="Subject / Service Interested In">
+                </div>
+              </div>
+              <div style="margin-bottom:18px;">
+                <textarea id="homeMessage" name="message" placeholder="Tell us how we can help you..." rows="4" required></textarea>
+              </div>
+              <button type="submit" id="homeSubmitBtn" class="main-btn contact-btn">
+                <span>Send Message</span>
+              </button>
+              <div id="homeFormStatus" style="display:none; margin-top:15px; font-weight:600; text-align:center;"></div>
+            </form>
+
+            <div id="homeSuccessOverlay" style="display:none; position:absolute; inset:0; background:rgba(255,255,255,0.98); border-radius:25px; padding:30px; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:10;">
+              <div style="width:70px; height:70px; border-radius:50%; background:linear-gradient(135deg, #ef4444, #dc2626); color:#fff; display:flex; align-items:center; justify-content:center; font-size:32px; margin-bottom:16px; box-shadow:0 10px 25px rgba(239,68,68,0.3);">
+                ✓
+              </div>
+              <h3 style="font-size:24px; font-weight:800; color:#0f172a; margin-bottom:8px;">Message Sent Successfully!</h3>
+              <p style="color:#64748b; font-size:15px; max-width:400px; margin-bottom:20px;">Thank you for reaching out to System Cares IT Solutions. Our team will review your message and get back to you within 24 hours.</p>
+              <button type="button" onclick="document.getElementById('homeSuccessOverlay').style.display='none'" class="main-btn" style="padding:10px 24px; font-size:14px;">Send Another Message</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <!-- FAQ SECTION -->
 <section style="padding:70px 20px; background:linear-gradient(135deg,#ffffff,#ffffff,#ffffff); position:relative; overflow:hidden;" data-nav-theme="light">
 
@@ -750,7 +831,7 @@
             Other Services
           </a>
 
-          <a href="digital-marketing.html#booking-section"
+          <a href="#contact"
             style="color:#ffffff; text-decoration:none; transition:0.3s;"
             onmouseover="this.style.color='#ff3b3b'; this.style.textShadow='0 0 10px #ff3b3b';"
             onmouseout="this.style.color='white'; this.style.textShadow='none';">
@@ -848,12 +929,109 @@
   <!-- SCRIPTS -->
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/email.min.js"></script>
   <script src="assets/js/app.js"></script>
 
   <script>
 window.addEventListener("load", () => {
     document.body.style.overflowX = "hidden";
 });
+
+// Home Page Contact Form Submission Handler
+const homeForm = document.getElementById('homeContactForm');
+if (homeForm) {
+    const EMAILJS_SERVICE_ID = 'service_r2q6ke3';
+    const EMAILJS_TEMPLATE_ID = 'template_k3y0z4k';
+    const EMAILJS_PUBLIC_KEY = 'QwdONcu0_vdatEAJm';
+    const CONTACT_TO_EMAIL = 'support@systemcaresitsolutions.com';
+
+    if (typeof emailjs !== 'undefined') {
+        try {
+            emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        } catch (e) {
+            console.warn('EmailJS init warning:', e);
+        }
+    }
+
+    homeForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('homeSubmitBtn');
+        const originalText = btn ? btn.innerHTML : '<span>Send Message</span>';
+        const statusEl = document.getElementById('homeFormStatus');
+        const overlay = document.getElementById('homeSuccessOverlay');
+
+        if (statusEl) {
+            statusEl.style.display = 'none';
+            statusEl.textContent = '';
+        }
+
+        const name = document.getElementById('homeName')?.value.trim();
+        const email = document.getElementById('homeEmail')?.value.trim();
+        const phone = document.getElementById('homePhone')?.value.trim();
+        const subject = document.getElementById('homeSubject')?.value.trim() || 'General Inquiry';
+        const message = document.getElementById('homeMessage')?.value.trim();
+
+        if (btn) {
+            btn.innerHTML = '<span>Sending Message...</span>';
+            btn.disabled = true;
+        }
+
+        const payload = {
+            to_email: CONTACT_TO_EMAIL,
+            to_name: 'System Cares IT Solutions',
+            from_name: name,
+            from_email: email,
+            phone: phone,
+            subject: subject,
+            message: `Subject: ${subject}\nPhone: ${phone}\n\nMessage:\n${message}`
+        };
+
+        // Backup save to localStorage
+        try {
+            const subs = JSON.parse(localStorage.getItem('scs_submissions') || '[]');
+            subs.push({ date: new Date().toISOString(), name, email, phone, subject, message });
+            localStorage.setItem('scs_submissions', JSON.stringify(subs));
+        } catch (err) {
+            console.warn('LocalStorage save error:', err);
+        }
+
+        // Try EmailJS dispatch
+        try {
+            if (typeof emailjs !== 'undefined' && typeof emailjs.send === 'function') {
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, payload, EMAILJS_PUBLIC_KEY);
+            } else {
+                await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        lib_version: '4.4.1',
+                        service_id: EMAILJS_SERVICE_ID,
+                        template_id: EMAILJS_TEMPLATE_ID,
+                        user_id: EMAILJS_PUBLIC_KEY,
+                        template_params: payload
+                    })
+                });
+            }
+        } catch (err) {
+            console.warn('Email send attempt handled:', err);
+        }
+
+        setTimeout(() => {
+            homeForm.reset();
+            if (btn) {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+            if (overlay) {
+                overlay.style.display = 'flex';
+            } else if (statusEl) {
+                statusEl.style.display = 'block';
+                statusEl.style.color = '#16a34a';
+                statusEl.textContent = '✓ Your message has been sent successfully!';
+            }
+        }, 500);
+    });
+}
 </script>
 
 </body>

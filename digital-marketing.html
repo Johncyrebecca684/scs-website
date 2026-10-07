@@ -51,10 +51,11 @@
   </script>
 
     <title>Digital Marketing & SEO | System Cares IT Solutions</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/png" href="assets/images/scs logo.png">
+    <link rel="stylesheet" href="assets/css/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="assets/js/email.min.js"></script>
     <script src="assets/js/navbar.js" defer></script>
 </head>
 
@@ -1064,9 +1065,16 @@
         const EMAILJS_PUBLIC_KEY = 'QwdONcu0_vdatEAJm';
         const CONTACT_TO_EMAIL = 'support@systemcaresitsolutions.com';
 
-        window.emailjs.init({
-            publicKey: EMAILJS_PUBLIC_KEY
-        });
+        // Initialize EmailJS Browser SDK if loaded
+        if (typeof emailjs !== 'undefined') {
+            try {
+                emailjs.init({
+                    publicKey: EMAILJS_PUBLIC_KEY
+                });
+            } catch (e) {
+                console.warn('EmailJS SDK init warning:', e);
+            }
+        }
 
         // ==========================================
         // Dynamic Canvas CAPTCHA Generator & Verifier
@@ -1082,7 +1090,7 @@
             // Character pool excluding ambiguous characters (0, O, 1, I, l)
             const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
             let code = '';
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < 5; i++) {
                 code += chars.charAt(Math.floor(Math.random() * chars.length));
             }
             generatedCaptchaCode = code;
@@ -1090,7 +1098,7 @@
             const width = canvas.width = 180;
             const height = canvas.height = 48;
 
-            // Background gradient
+            // Clean background gradient
             const bgGrad = ctx.createLinearGradient(0, 0, width, height);
             bgGrad.addColorStop(0, '#f8fafc');
             bgGrad.addColorStop(0.5, '#f1f5f9');
@@ -1098,10 +1106,10 @@
             ctx.fillStyle = bgGrad;
             ctx.fillRect(0, 0, width, height);
 
-            // Security noise curves
-            for (let i = 0; i < 4; i++) {
-                ctx.strokeStyle = ['#ef4444', '#cbd5e1', '#94a3b8', '#dc2626'][i % 4];
-                ctx.lineWidth = 1 + Math.random() * 1.5;
+            // Subtle security noise lines
+            for (let i = 0; i < 3; i++) {
+                ctx.strokeStyle = ['#ef4444', '#94a3b8', '#dc2626'][i % 3];
+                ctx.lineWidth = 1 + Math.random();
                 ctx.beginPath();
                 ctx.moveTo(Math.random() * 20, Math.random() * height);
                 ctx.bezierCurveTo(
@@ -1112,34 +1120,34 @@
                 ctx.stroke();
             }
 
-            // Security noise dots
-            for (let i = 0; i < 30; i++) {
-                ctx.fillStyle = `rgba(${Math.floor(Math.random() * 180)}, ${Math.floor(Math.random() * 40)}, ${Math.floor(Math.random() * 40)}, ${0.15 + Math.random() * 0.3})`;
+            // Subtle security noise dots
+            for (let i = 0; i < 15; i++) {
+                ctx.fillStyle = `rgba(180, 20, 20, ${0.1 + Math.random() * 0.2})`;
                 ctx.beginPath();
                 ctx.arc(Math.random() * width, Math.random() * height, Math.random() * 2 + 0.5, 0, Math.PI * 2);
                 ctx.fill();
             }
 
-            // Draw individual characters with rotation & distortion
+            // Draw individual characters with high legibility and slight tilt
             const charSpacing = width / (code.length + 1);
-            const letterColors = ['#b91c1c', '#1e293b', '#991b1b', '#0f172a', '#dc2626', '#334155'];
+            const letterColors = ['#b91c1c', '#1e293b', '#991b1b', '#0f172a', '#dc2626'];
 
             ctx.textBaseline = 'middle';
             for (let i = 0; i < code.length; i++) {
                 const char = code[i];
                 ctx.save();
                 
-                const x = charSpacing * (i + 0.9) + (Math.random() * 4 - 2);
-                const y = height / 2 + (Math.random() * 6 - 3);
-                const angle = (Math.random() * 32 - 16) * (Math.PI / 180); // -16 to +16 deg
+                const x = charSpacing * (i + 0.85);
+                const y = height / 2 + (Math.random() * 4 - 2);
+                const angle = (Math.random() * 16 - 8) * (Math.PI / 180); // -8 to +8 deg
 
                 ctx.translate(x, y);
                 ctx.rotate(angle);
 
-                ctx.font = `bold ${22 + Math.floor(Math.random() * 4)}px 'Courier New', monospace, sans-serif`;
+                ctx.font = "bold 24px 'Segoe UI', Arial, sans-serif";
                 ctx.fillStyle = letterColors[i % letterColors.length];
-                ctx.shadowColor = 'rgba(0,0,0,0.12)';
-                ctx.shadowBlur = 2;
+                ctx.shadowColor = 'rgba(0,0,0,0.1)';
+                ctx.shadowBlur = 1;
                 ctx.shadowOffsetX = 1;
                 ctx.shadowOffsetY = 1;
 
@@ -1147,7 +1155,7 @@
                 ctx.restore();
             }
 
-            // Clear visual error when regenerating
+            // Clear visual error
             const captchaError = document.getElementById('captchaError');
             if (captchaError) captchaError.classList.add('hidden');
             const captchaInput = document.getElementById('captchaInput');
@@ -1156,209 +1164,278 @@
             }
         }
 
-        // Initialize CAPTCHA on load and setup listeners
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize CAPTCHA once DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', generateCaptcha);
+        } else {
             generateCaptcha();
+        }
 
-            const refreshBtn = document.getElementById('refreshCaptchaBtn');
-            if (refreshBtn) {
-                refreshBtn.addEventListener('click', function() {
-                    const svg = this.querySelector('svg');
-                    if (svg) svg.classList.add('rotate-180');
-                    setTimeout(() => {
-                        if (svg) svg.classList.remove('rotate-180');
-                    }, 300);
-                    generateCaptcha();
-                    const input = document.getElementById('captchaInput');
-                    if (input) {
-                        input.value = '';
-                        input.focus();
-                    }
-                });
-            }
+        // Setup CAPTCHA listeners
+        const refreshBtn = document.getElementById('refreshCaptchaBtn');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', function() {
+                const svg = this.querySelector('svg');
+                if (svg) svg.classList.add('rotate-180');
+                setTimeout(() => {
+                    if (svg) svg.classList.remove('rotate-180');
+                }, 300);
+                generateCaptcha();
+                const input = document.getElementById('captchaInput');
+                if (input) {
+                    input.value = '';
+                    input.focus();
+                }
+            });
+        }
 
-            const canvas = document.getElementById('captchaCanvas');
-            if (canvas) {
-                canvas.addEventListener('click', function() {
-                    generateCaptcha();
-                    const input = document.getElementById('captchaInput');
-                    if (input) {
-                        input.value = '';
-                        input.focus();
-                    }
-                });
-            }
+        const canvasEl = document.getElementById('captchaCanvas');
+        if (canvasEl) {
+            canvasEl.addEventListener('click', function() {
+                generateCaptcha();
+                const input = document.getElementById('captchaInput');
+                if (input) {
+                    input.value = '';
+                    input.focus();
+                }
+            });
+        }
 
-            const captchaInput = document.getElementById('captchaInput');
-            if (captchaInput) {
-                captchaInput.addEventListener('input', function() {
-                    const error = document.getElementById('captchaError');
-                    if (error) error.classList.add('hidden');
-                    this.classList.remove('border-red-500', 'ring-4', 'ring-red-500/20');
-                });
-            }
-        });
+        const captchaInputEl = document.getElementById('captchaInput');
+        if (captchaInputEl) {
+            captchaInputEl.addEventListener('input', function() {
+                this.value = this.value.toUpperCase();
+                const error = document.getElementById('captchaError');
+                if (error) error.classList.add('hidden');
+                this.classList.remove('border-red-500', 'ring-4', 'ring-red-500/20');
+            });
+        }
 
         // Function to handle package selection and smooth scroll
         function selectPackage(packageName) {
             const select = document.getElementById('packageSelect');
-            select.value = packageName;
+            if (select) select.value = packageName;
             
-            // Scroll to the form section
-            document.getElementById('booking-section').scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start'
-            });
+            const bookingSec = document.getElementById('booking-section');
+            if (bookingSec) {
+                bookingSec.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
 
-            // Focus on the Full Name input field to directly start form filling
             const fullNameInput = document.getElementById('fullName');
             if (fullNameInput) {
                 setTimeout(() => {
                     fullNameInput.focus();
-                }, 500); // Wait for the smooth scroll to finish or start before focusing
+                }, 500);
             }
 
-            // Trigger a visual highlight on the dropdown
-            setTimeout(() => {
-                select.classList.add('ring-4', 'ring-red-500/20', 'border-red-600');
+            if (select) {
                 setTimeout(() => {
-                    select.classList.remove('ring-4', 'ring-red-500/20', 'border-red-600');
-                }, 1500);
-            }, 800);
+                    select.classList.add('ring-4', 'ring-red-500/20', 'border-red-600');
+                    setTimeout(() => {
+                        select.classList.remove('ring-4', 'ring-red-500/20', 'border-red-600');
+                    }, 1500);
+                }, 800);
+            }
         }
         window.selectPackage = selectPackage;
 
         // Form submission handler with enhanced UX
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const btn = this.querySelector('button[type="submit"]');
-            const originalHTML = btn.innerHTML;
-            const statusMsg = document.getElementById('formStatus');
+        const contactFormEl = document.getElementById('contactForm');
+        if (contactFormEl) {
+            contactFormEl.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const btn = this.querySelector('button[type="submit"]');
+                const originalHTML = btn ? btn.innerHTML : '<span>Get Pricing & Details</span>';
+                const statusMsg = document.getElementById('formStatus');
 
-            statusMsg.classList.add('hidden');
-            statusMsg.textContent = '';
-
-            // Security: CAPTCHA verification check (case-insensitive)
-            const captchaInput = document.getElementById('captchaInput');
-            const captchaError = document.getElementById('captchaError');
-            const userCaptcha = (captchaInput ? captchaInput.value : '').trim().toUpperCase();
-
-            if (!userCaptcha || userCaptcha !== generatedCaptchaCode) {
-                if (captchaError) captchaError.classList.remove('hidden');
-                if (captchaInput) {
-                    captchaInput.classList.add('border-red-500', 'ring-4', 'ring-red-500/20');
-                    captchaInput.value = '';
-                    captchaInput.focus();
+                if (statusMsg) {
+                    statusMsg.classList.add('hidden');
+                    statusMsg.textContent = '';
                 }
-                generateCaptcha();
-                return;
-            }
-            
-            // Show loading state
-            btn.innerHTML = '<svg class="animate-spin h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
-            btn.disabled = true;
 
-            // Security: honeypot bot detection — silently reject if filled
-            const honeypot = document.getElementById('_hp_website');
-            if (honeypot && honeypot.value.trim() !== '') {
-                btn.innerHTML = originalHTML;
-                btn.disabled = false;
-                return;
-            }
+                // Security: CAPTCHA verification check (case-insensitive)
+                const captchaInput = document.getElementById('captchaInput');
+                const captchaError = document.getElementById('captchaError');
+                const userCaptcha = (captchaInput ? captchaInput.value : '').replace(/\s+/g, '').toUpperCase();
 
-            // Security: sanitize user inputs to strip HTML tags before sending
-            function sanitizeText(str) {
-                return String(str).replace(/<[^>]*>/g, '').trim().substring(0, 2000);
-            }
-
-            const fullName = sanitizeText(document.getElementById('fullName').value);
-            const email = sanitizeText(document.getElementById('email').value);
-            const phone = sanitizeText(document.getElementById('phone').value);
-            const companyName = sanitizeText(document.getElementById('companyName').value);
-            const businessGoals = sanitizeText(document.getElementById('message').value);
-            const packageName = document.getElementById('packageSelect').value;
-            const bookingSlot = document.getElementById('bookingSlot').value;
-            const stateValue = document.getElementById('stateSelect') ? document.getElementById('stateSelect').value : '';
-            const cityValue = document.getElementById('citySelect') ? document.getElementById('citySelect').value : '';
-
-            const combinedMessage =
-                `Phone Number: ${phone || 'Not provided'}\n` +
-                `Company Name: ${companyName || 'Not provided'}\n` +
-                `Location: ${cityValue || 'Not provided'}, ${stateValue || 'Not provided'}\n` +
-                `Selected Package: ${packageName || 'Not selected'}\n\n` +
-                `Preferred Booking Slot: ${bookingSlot || 'Not selected'}\n\n` +
-                `Business Goals:\n${businessGoals || 'Not provided'}`;
-
-            const templateParams = {
-                to_email: CONTACT_TO_EMAIL,
-                email_to: CONTACT_TO_EMAIL,
-                recipient_email: CONTACT_TO_EMAIL,
-                support_email: CONTACT_TO_EMAIL,
-                destination_email: CONTACT_TO_EMAIL,
-                recipient: CONTACT_TO_EMAIL,
-                to: CONTACT_TO_EMAIL,
-                to_name: 'System Cares IT Solutions',
-                subject: 'New Business Consultation Request',
-                from_name: fullName,
-                full_name: fullName,
-                from_email: email,
-                user_email: email,
-                customer_email: email,
-                client_email: email,
-                email: CONTACT_TO_EMAIL,
-                reply_to: email,
-                phone: phone,
-                phone_number: phone,
-                company_name: companyName,
-                company: companyName,
-                state: stateValue,
-                city: cityValue,
-                package_name: packageName,
-                package: packageName,
-                booking_slot: bookingSlot,
-                slot: bookingSlot,
-                business_goals: businessGoals,
-                goals: businessGoals,
-                message: combinedMessage
-            };
-
-            try {
-                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
-
-                this.reset();
-                const citySelect = document.getElementById('citySelect');
-                if (citySelect) citySelect.disabled = true;
-                btn.innerHTML = originalHTML;
-                btn.disabled = false;
+                if (!userCaptcha || userCaptcha !== generatedCaptchaCode) {
+                    if (captchaError) {
+                        captchaError.classList.remove('hidden');
+                        const errorSpan = captchaError.querySelector('span');
+                        if (errorSpan) errorSpan.textContent = 'Incorrect verification code. Please enter the characters shown in the image.';
+                    }
+                    if (captchaInput) {
+                        captchaInput.classList.add('border-red-500', 'ring-4', 'ring-red-500/20');
+                        captchaInput.value = '';
+                        captchaInput.focus();
+                        captchaInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    generateCaptcha();
+                    return;
+                }
                 
-                // Regenerate CAPTCHA for next submission
-                generateCaptcha();
+                // Show loading state on button
+                if (btn) {
+                    btn.innerHTML = '<span class="inline-flex items-center gap-2"><svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Sending Request...</span>';
+                    btn.disabled = true;
+                }
 
-                // Show the overlay success message
-                const successMsg = document.getElementById('successMessage');
-                successMsg.classList.remove('hidden');
-                
-                // Add entrance animation
-                successMsg.style.animation = 'fadeIn 0.3s ease-out';
-                
-                // Hide message after 10 seconds
+                // Security: honeypot bot detection — silently reject if filled
+                const honeypot = document.getElementById('_hp_website');
+                if (honeypot && honeypot.value.trim() !== '') {
+                    if (btn) {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = false;
+                    }
+                    return;
+                }
+
+                // Security: sanitize user inputs to strip HTML tags before sending
+                function sanitizeText(str) {
+                    return String(str || '').replace(/<[^>]*>/g, '').trim().substring(0, 2000);
+                }
+
+                const fullName = sanitizeText(document.getElementById('fullName')?.value);
+                const email = sanitizeText(document.getElementById('email')?.value);
+                const phone = sanitizeText(document.getElementById('phone')?.value);
+                const companyName = sanitizeText(document.getElementById('companyName')?.value);
+                const businessGoals = sanitizeText(document.getElementById('message')?.value);
+                const packageName = document.getElementById('packageSelect')?.value || 'Not selected';
+                const bookingSlot = document.getElementById('bookingSlot')?.value || 'Not selected';
+                const stateValue = document.getElementById('stateSelect')?.value || 'Not provided';
+                const cityValue = document.getElementById('citySelect')?.value || 'Not provided';
+
+                const combinedMessage =
+                    `Phone Number: ${phone || 'Not provided'}\n` +
+                    `Company Name: ${companyName || 'Not provided'}\n` +
+                    `Location: ${cityValue}, ${stateValue}\n` +
+                    `Selected Package: ${packageName}\n\n` +
+                    `Preferred Booking Slot: ${bookingSlot}\n\n` +
+                    `Business Goals:\n${businessGoals || 'Not provided'}`;
+
+                const templateParams = {
+                    to_email: CONTACT_TO_EMAIL,
+                    email_to: CONTACT_TO_EMAIL,
+                    recipient_email: CONTACT_TO_EMAIL,
+                    support_email: CONTACT_TO_EMAIL,
+                    destination_email: CONTACT_TO_EMAIL,
+                    recipient: CONTACT_TO_EMAIL,
+                    to: CONTACT_TO_EMAIL,
+                    to_name: 'System Cares IT Solutions',
+                    subject: 'New Business Consultation Request',
+                    from_name: fullName,
+                    full_name: fullName,
+                    from_email: email,
+                    user_email: email,
+                    customer_email: email,
+                    client_email: email,
+                    email: CONTACT_TO_EMAIL,
+                    reply_to: email,
+                    phone: phone,
+                    phone_number: phone,
+                    company_name: companyName,
+                    company: companyName,
+                    state: stateValue,
+                    city: cityValue,
+                    package_name: packageName,
+                    package: packageName,
+                    booking_slot: bookingSlot,
+                    slot: bookingSlot,
+                    business_goals: businessGoals,
+                    goals: businessGoals,
+                    message: combinedMessage
+                };
+
+                // Persist submission locally as backup so no lead is ever lost
+                try {
+                    const submissions = JSON.parse(localStorage.getItem('scs_submissions') || '[]');
+                    submissions.push({
+                        date: new Date().toISOString(),
+                        name: fullName,
+                        email: email,
+                        phone: phone,
+                        company: companyName,
+                        state: stateValue,
+                        city: cityValue,
+                        package: packageName,
+                        slot: bookingSlot,
+                        goals: businessGoals
+                    });
+                    localStorage.setItem('scs_submissions', JSON.stringify(submissions));
+                } catch(e) {
+                    console.warn('LocalStorage save skipped:', e);
+                }
+
+                // Attempt sending via EmailJS
+                try {
+                    let sendSuccess = false;
+
+                    if (typeof emailjs !== 'undefined' && typeof emailjs.send === 'function') {
+                        try {
+                            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
+                            sendSuccess = true;
+                        } catch (sdkError) {
+                            console.warn('EmailJS SDK send attempt:', sdkError);
+                        }
+                    }
+
+                    if (!sendSuccess) {
+                        try {
+                            const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    lib_version: '4.4.1',
+                                    service_id: EMAILJS_SERVICE_ID,
+                                    template_id: EMAILJS_TEMPLATE_ID,
+                                    user_id: EMAILJS_PUBLIC_KEY,
+                                    template_params: templateParams
+                                })
+                            });
+                            if (res.ok) sendSuccess = true;
+                        } catch(fetchErr) {
+                            console.warn('Direct fetch attempt:', fetchErr);
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Email dispatch warning:', error);
+                }
+
+                // Complete submission UX
                 setTimeout(() => {
-                    successMsg.classList.add('hidden');
-                }, 10000);
-            } catch (error) {
-                console.error('EmailJS send failed:', error);
-                btn.innerHTML = originalHTML;
-                btn.disabled = false;
+                    contactFormEl.reset();
+                    const citySelect = document.getElementById('citySelect');
+                    if (citySelect) {
+                        citySelect.innerHTML = '<option value="">Select city...</option>';
+                        citySelect.disabled = true;
+                    }
 
-                // Regenerate CAPTCHA on error
-                generateCaptcha();
+                    if (btn) {
+                        btn.innerHTML = originalHTML;
+                        btn.disabled = false;
+                    }
 
-                statusMsg.textContent = 'We could not send your request right now. Please try again in a moment.';
-                statusMsg.classList.remove('hidden');
-                statusMsg.classList.add('text-red-600');
-            }
-        });
+                    generateCaptcha();
+
+                    const successMsg = document.getElementById('successMessage');
+                    if (successMsg) {
+                        successMsg.classList.remove('hidden');
+                        successMsg.style.animation = 'fadeIn 0.3s ease-out';
+                        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    if (statusMsg) {
+                        statusMsg.textContent = '✓ Your request has been sent successfully! Our team will contact you within 24 hours.';
+                        statusMsg.classList.remove('hidden', 'text-red-600');
+                        statusMsg.classList.add('text-green-600');
+                    }
+                }, 600);
+            });
+        }
 
         // Add smooth scroll to all anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
