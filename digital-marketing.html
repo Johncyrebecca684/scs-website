@@ -996,6 +996,34 @@
                         <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:ring-4 focus:ring-red-500/20 focus:border-red-600 outline-none transition-all placeholder:text-slate-400 bg-white resize-none" placeholder="Share your vision... What do you want to achieve in the next 6-12 months? Any specific challenges you're facing?"></textarea>
                     </div>
 
+                    <!-- CAPTCHA Verification Section -->
+                    <div class="space-y-2 pt-2">
+                        <label class="text-sm font-bold text-slate-700 ml-1 flex items-center justify-between">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                Security Verification *
+                            </span>
+                            <span class="text-xs text-slate-500 font-normal">Enter the characters below</span>
+                        </label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 items-center">
+                            <div class="flex items-center gap-2 bg-slate-100 p-2 rounded-xl border-2 border-slate-200">
+                                <canvas id="captchaCanvas" width="180" height="48" class="bg-white rounded-lg border border-slate-200 shadow-inner select-none cursor-pointer flex-1" title="Click image to refresh CAPTCHA"></canvas>
+                                <button type="button" id="refreshCaptchaBtn" title="Refresh CAPTCHA" class="p-2.5 bg-white hover:bg-red-50 text-slate-600 hover:text-red-600 rounded-lg border border-slate-200 transition-all shadow-sm active:scale-95 flex items-center justify-center">
+                                    <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div>
+                                <input id="captchaInput" name="captcha_code" type="text" required maxlength="6" autocomplete="off" placeholder="Enter CAPTCHA" class="w-full px-4 py-3 rounded-xl border-2 border-slate-200 focus:ring-4 focus:ring-red-500/20 focus:border-red-600 outline-none transition-all placeholder:text-slate-400 bg-white font-mono font-bold tracking-widest text-slate-800 uppercase text-center text-lg">
+                            </div>
+                        </div>
+                        <p id="captchaError" class="hidden text-xs text-red-600 font-semibold pl-1 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                            <span>Incorrect verification code. Please enter the characters shown.</span>
+                        </p>
+                    </div>
+
                     <p id="formStatus" class="hidden text-center text-sm font-semibold pt-1"></p>
 
                     <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-5 px-8 rounded-xl hover:from-red-700 hover:to-red-800 transform transition-all active:scale-[0.98] shadow-xl shadow-red-200 text-lg uppercase tracking-wider flex items-center justify-center gap-3 group">
@@ -1040,6 +1068,137 @@
             publicKey: EMAILJS_PUBLIC_KEY
         });
 
+        // ==========================================
+        // Dynamic Canvas CAPTCHA Generator & Verifier
+        // ==========================================
+        let generatedCaptchaCode = '';
+
+        function generateCaptcha() {
+            const canvas = document.getElementById('captchaCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            // Character pool excluding ambiguous characters (0, O, 1, I, l)
+            const chars = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+            let code = '';
+            for (let i = 0; i < 6; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            generatedCaptchaCode = code;
+
+            const width = canvas.width = 180;
+            const height = canvas.height = 48;
+
+            // Background gradient
+            const bgGrad = ctx.createLinearGradient(0, 0, width, height);
+            bgGrad.addColorStop(0, '#f8fafc');
+            bgGrad.addColorStop(0.5, '#f1f5f9');
+            bgGrad.addColorStop(1, '#e2e8f0');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, width, height);
+
+            // Security noise curves
+            for (let i = 0; i < 4; i++) {
+                ctx.strokeStyle = ['#ef4444', '#cbd5e1', '#94a3b8', '#dc2626'][i % 4];
+                ctx.lineWidth = 1 + Math.random() * 1.5;
+                ctx.beginPath();
+                ctx.moveTo(Math.random() * 20, Math.random() * height);
+                ctx.bezierCurveTo(
+                    Math.random() * width * 0.4, Math.random() * height,
+                    Math.random() * width * 0.8, Math.random() * height,
+                    width - Math.random() * 20, Math.random() * height
+                );
+                ctx.stroke();
+            }
+
+            // Security noise dots
+            for (let i = 0; i < 30; i++) {
+                ctx.fillStyle = `rgba(${Math.floor(Math.random() * 180)}, ${Math.floor(Math.random() * 40)}, ${Math.floor(Math.random() * 40)}, ${0.15 + Math.random() * 0.3})`;
+                ctx.beginPath();
+                ctx.arc(Math.random() * width, Math.random() * height, Math.random() * 2 + 0.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Draw individual characters with rotation & distortion
+            const charSpacing = width / (code.length + 1);
+            const letterColors = ['#b91c1c', '#1e293b', '#991b1b', '#0f172a', '#dc2626', '#334155'];
+
+            ctx.textBaseline = 'middle';
+            for (let i = 0; i < code.length; i++) {
+                const char = code[i];
+                ctx.save();
+                
+                const x = charSpacing * (i + 0.9) + (Math.random() * 4 - 2);
+                const y = height / 2 + (Math.random() * 6 - 3);
+                const angle = (Math.random() * 32 - 16) * (Math.PI / 180); // -16 to +16 deg
+
+                ctx.translate(x, y);
+                ctx.rotate(angle);
+
+                ctx.font = `bold ${22 + Math.floor(Math.random() * 4)}px 'Courier New', monospace, sans-serif`;
+                ctx.fillStyle = letterColors[i % letterColors.length];
+                ctx.shadowColor = 'rgba(0,0,0,0.12)';
+                ctx.shadowBlur = 2;
+                ctx.shadowOffsetX = 1;
+                ctx.shadowOffsetY = 1;
+
+                ctx.fillText(char, -7, 0);
+                ctx.restore();
+            }
+
+            // Clear visual error when regenerating
+            const captchaError = document.getElementById('captchaError');
+            if (captchaError) captchaError.classList.add('hidden');
+            const captchaInput = document.getElementById('captchaInput');
+            if (captchaInput) {
+                captchaInput.classList.remove('border-red-500', 'ring-4', 'ring-red-500/20');
+            }
+        }
+
+        // Initialize CAPTCHA on load and setup listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            generateCaptcha();
+
+            const refreshBtn = document.getElementById('refreshCaptchaBtn');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    const svg = this.querySelector('svg');
+                    if (svg) svg.classList.add('rotate-180');
+                    setTimeout(() => {
+                        if (svg) svg.classList.remove('rotate-180');
+                    }, 300);
+                    generateCaptcha();
+                    const input = document.getElementById('captchaInput');
+                    if (input) {
+                        input.value = '';
+                        input.focus();
+                    }
+                });
+            }
+
+            const canvas = document.getElementById('captchaCanvas');
+            if (canvas) {
+                canvas.addEventListener('click', function() {
+                    generateCaptcha();
+                    const input = document.getElementById('captchaInput');
+                    if (input) {
+                        input.value = '';
+                        input.focus();
+                    }
+                });
+            }
+
+            const captchaInput = document.getElementById('captchaInput');
+            if (captchaInput) {
+                captchaInput.addEventListener('input', function() {
+                    const error = document.getElementById('captchaError');
+                    if (error) error.classList.add('hidden');
+                    this.classList.remove('border-red-500', 'ring-4', 'ring-red-500/20');
+                });
+            }
+        });
+
         // Function to handle package selection and smooth scroll
         function selectPackage(packageName) {
             const select = document.getElementById('packageSelect');
@@ -1079,6 +1238,22 @@
 
             statusMsg.classList.add('hidden');
             statusMsg.textContent = '';
+
+            // Security: CAPTCHA verification check (case-insensitive)
+            const captchaInput = document.getElementById('captchaInput');
+            const captchaError = document.getElementById('captchaError');
+            const userCaptcha = (captchaInput ? captchaInput.value : '').trim().toUpperCase();
+
+            if (!userCaptcha || userCaptcha !== generatedCaptchaCode) {
+                if (captchaError) captchaError.classList.remove('hidden');
+                if (captchaInput) {
+                    captchaInput.classList.add('border-red-500', 'ring-4', 'ring-red-500/20');
+                    captchaInput.value = '';
+                    captchaInput.focus();
+                }
+                generateCaptcha();
+                return;
+            }
             
             // Show loading state
             btn.innerHTML = '<svg class="animate-spin h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
@@ -1157,6 +1332,9 @@
                 btn.innerHTML = originalHTML;
                 btn.disabled = false;
                 
+                // Regenerate CAPTCHA for next submission
+                generateCaptcha();
+
                 // Show the overlay success message
                 const successMsg = document.getElementById('successMessage');
                 successMsg.classList.remove('hidden');
@@ -1172,6 +1350,9 @@
                 console.error('EmailJS send failed:', error);
                 btn.innerHTML = originalHTML;
                 btn.disabled = false;
+
+                // Regenerate CAPTCHA on error
+                generateCaptcha();
 
                 statusMsg.textContent = 'We could not send your request right now. Please try again in a moment.';
                 statusMsg.classList.remove('hidden');
